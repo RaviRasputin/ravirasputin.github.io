@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PhD Scholar | Status Signalling | Central University of Kerala</title>
+  <title>Ravi Kumar | PhD Scholar | Status & Rising Powers | CUK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -39,15 +39,8 @@
       --card-hover-border: rgba(8, 145, 178, 0.35);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Source Serif 4', Georgia, serif;
@@ -60,7 +53,6 @@
       transition: background 0.4s var(--ease-out-expo), color 0.3s ease;
     }
 
-    /* Custom cursor glow – light blue transparent ring around pointer (cursor icon stays visible) */
     .cursor-glow {
       position: fixed;
       width: 200px;
@@ -68,56 +60,24 @@
       margin-left: -100px;
       margin-top: -100px;
       border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(34, 211, 238, 0.12) 0%,
-        rgba(34, 211, 238, 0.06) 35%,
-        transparent 70%
-      );
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, rgba(34, 211, 238, 0.06) 35%, transparent 70%);
       pointer-events: none;
       z-index: 9999;
       transition: transform 0.15s ease-out;
       will-change: transform;
     }
 
-    /* Light mode: teal tint visible on light background */
     [data-theme="light"] .cursor-glow {
-      background: radial-gradient(
-        circle,
-        rgba(6, 95, 112, 0.22) 0%,
-        rgba(6, 95, 112, 0.12) 40%,
-        rgba(6, 95, 112, 0.04) 65%,
-        transparent 75%
-      );
+      background: radial-gradient(circle, rgba(6, 95, 112, 0.22) 0%, rgba(6, 95, 112, 0.12) 40%, rgba(6, 95, 112, 0.04) 65%, transparent 75%);
     }
 
-    /* Animations */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes glow-pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--glow); } 50% { opacity: 0.85; box-shadow: 0 0 20px var(--glow); } }
+    @keyframes fade-in-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-    @keyframes glow-pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--glow); }
-      50% { opacity: 0.85; box-shadow: 0 0 20px var(--glow); }
-    }
-
-    @keyframes fade-in-up {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    #about .hero-badge {
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .glow-line {
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-
-    section h1 {
-      animation: fade-in-up 0.8s var(--ease-out-expo) both;
-    }
+    #about .hero-badge { animation: float 4s ease-in-out infinite; }
+    .glow-line { animation: glow-pulse 3s ease-in-out infinite; }
+    section h1 { animation: fade-in-up 0.8s var(--ease-out-expo) both; }
 
     [data-theme="light"] body {
       background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(8, 145, 178, 0.06), transparent),
@@ -132,17 +92,11 @@
       z-index: 1000;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
+    [data-theme="light"] .noise { opacity: 0.02; }
 
-    [data-theme="light"] .noise {
-      opacity: 0.02;
-    }
-
-    /* Nav */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       padding: 1rem 1rem;
       background: var(--nav-bg);
@@ -179,22 +133,10 @@
       transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    nav a:hover {
-      color: var(--accent);
-      background: var(--glow);
-    }
+    nav a:hover { color: var(--accent); background: var(--glow); }
+    nav a.active { color: var(--accent); background: var(--glow); box-shadow: 0 0 20px var(--glow); }
 
-    nav a.active {
-      color: var(--accent);
-      background: var(--glow);
-      box-shadow: 0 0 20px var(--glow);
-    }
-
-    /* Theme toggle */
-    .theme-toggle-wrap {
-      display: flex;
-      align-items: center;
-    }
+    .theme-toggle-wrap { display: flex; align-items: center; }
 
     .theme-toggle {
       position: relative;
@@ -212,10 +154,7 @@
       padding: 0 6px;
     }
 
-    .theme-toggle:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 12px var(--glow);
-    }
+    .theme-toggle:hover { border-color: var(--accent); box-shadow: 0 0 12px var(--glow); }
 
     .theme-toggle .theme-icon {
       width: 18px;
@@ -226,25 +165,12 @@
       z-index: 1;
     }
 
-    .theme-toggle .theme-icon.active {
-      color: var(--accent);
-    }
+    .theme-toggle .theme-icon.active { color: var(--accent); }
+    .theme-toggle .moon-icon.active { color: var(--text-muted); }
+    .theme-toggle .sun-icon.active { color: var(--accent); }
 
-    /* Dark mode: sun is active (left) */
-    .theme-toggle .moon-icon.active {
-      color: var(--text-muted);
-    }
-    .theme-toggle .sun-icon.active {
-      color: var(--accent);
-    }
-
-    /* Light mode: moon is active (right) */
-    [data-theme="light"] .theme-toggle .sun-icon.active {
-      color: var(--text-muted);
-    }
-    [data-theme="light"] .theme-toggle .moon-icon.active {
-      color: var(--accent);
-    }
+    [data-theme="light"] .theme-toggle .sun-icon.active { color: var(--text-muted); }
+    [data-theme="light"] .theme-toggle .moon-icon.active { color: var(--accent); }
 
     .theme-toggle::after {
       content: "";
@@ -259,10 +185,7 @@
       transition: transform 0.35s var(--ease-out-expo);
       z-index: 0;
     }
-
-    [data-theme="light"] .theme-toggle::after {
-      transform: translateX(32px);
-    }
+    [data-theme="light"] .theme-toggle::after { transform: translateX(32px); }
 
     .theme-toggle .sr-only {
       position: absolute;
@@ -276,7 +199,6 @@
       border: 0;
     }
 
-    /* Sections */
     section {
       min-height: 0;
       padding: 4rem 1.25rem 3rem;
@@ -287,10 +209,7 @@
       transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
 
     section h1 {
       font-family: 'Outfit', sans-serif;
@@ -311,7 +230,6 @@
       font-weight: 400;
     }
 
-    /* Hero / About */
     #about {
       display: flex;
       flex-direction: column;
@@ -342,7 +260,27 @@
       font-family: 'Outfit', sans-serif;
       font-size: 1.1rem;
       color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    #about .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
       margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+    }
+
+    #about .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.02);
     }
 
     #about .bio {
@@ -350,7 +288,7 @@
       color: var(--text-muted);
       width: 100%;
       max-width: 100%;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       text-align: justify;
     }
 
@@ -359,22 +297,42 @@
       height: 3px;
       background: linear-gradient(90deg, var(--accent), transparent);
       border-radius: 2px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       box-shadow: 0 0 12px var(--glow);
     }
 
-    /* Cards */
-    .card-grid {
-      display: grid;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
     }
 
-    /* Research: left-to-right row of boxes */
-    #research .card-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+    .quick-links a {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .quick-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 24px var(--glow);
+    }
+
+    .card-grid { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
+
+    /* Make research cards 2x2 on desktop */
+    #research .card-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
     .card {
       background: var(--bg-card);
@@ -383,19 +341,18 @@
       padding: 1.5rem 1.75rem;
       opacity: 0;
       transform: translateY(16px);
-      transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo), border-color 0.3s ease, box-shadow 0.4s ease;
+      transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo),
+                  border-color 0.3s ease, box-shadow 0.4s ease;
     }
 
     section.visible .card,
-    section.visible .item {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible .item { opacity: 1; transform: translateY(0); }
 
     section.visible .card:nth-child(1) { transition-delay: 0.1s; }
     section.visible .card:nth-child(2) { transition-delay: 0.2s; }
     section.visible .card:nth-child(3) { transition-delay: 0.3s; }
     section.visible .card:nth-child(4) { transition-delay: 0.4s; }
+
     section.visible .item:nth-child(1) { transition-delay: 0.1s; }
     section.visible .item:nth-child(2) { transition-delay: 0.2s; }
     section.visible .item:nth-child(3) { transition-delay: 0.3s; }
@@ -419,19 +376,9 @@
       color: var(--text);
       margin-bottom: 0.35rem;
     }
+    .card .meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .card p { font-size: 0.95rem; color: var(--text-muted); }
 
-    .card .meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* List items */
     .item-list {
       display: flex;
       flex-direction: column;
@@ -452,10 +399,7 @@
       transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo), border-color 0.3s ease;
     }
 
-    .item:hover {
-      transform: translateX(6px);
-      border-color: var(--card-hover-border);
-    }
+    .item:hover { transform: translateX(6px); border-color: var(--card-hover-border); }
 
     .item-num {
       font-family: 'Outfit', sans-serif;
@@ -472,34 +416,9 @@
       margin-bottom: 0.25rem;
     }
 
-    .item .meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+    .item .meta { font-size: 0.85rem; color: var(--text-muted); }
 
-    /* Blog preview */
-    .blog-preview {
-      margin-top: 1.25rem;
-    }
-
-    .blog-preview .card {
-      margin-bottom: 1rem;
-    }
-
-    .blog-preview .card a {
-      color: inherit;
-      text-decoration: none;
-      display: block;
-    }
-
-    .blog-preview .card a:hover h3 {
-      color: var(--accent);
-    }
-
-    /* Contact */
-    #contact .subtitle {
-      margin-bottom: 1rem;
-    }
+    #contact .subtitle { margin-bottom: 1rem; }
 
     .contact-links {
       display: flex;
@@ -523,17 +442,8 @@
       transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .contact-links a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: 0 0 24px var(--glow);
-    }
-
-    .contact-links a svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-    }
+    .contact-links a:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 24px var(--glow); }
+    .contact-links a svg { width: 20px; height: 20px; stroke: currentColor; }
 
     footer {
       text-align: center;
@@ -561,12 +471,18 @@
     <div class="nav-inner">
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Research Experience</a></li>
+        <li><a href="#research">Research Interests</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <li><a href="#working">Working Papers</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="#talks">Invited Talks</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#memberships">Memberships</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
       <div class="theme-toggle-wrap">
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
           <span class="sr-only">Toggle light or dark mode</span>
@@ -584,108 +500,498 @@
   <section id="about">
     <span class="hero-badge">PhD Scholar</span>
     <h1>Ravi Kumar</h1>
-    <p class="role">Department of IR & Politics, Central University of Kerala </p>
+    <p class="role">Senior Research Fellow & PhD Candidate · Department of International Relations & Politics · Central University of Kerala</p>
+
+    <div class="meta-row">
+      <span class="meta-pill">ORCID: 0000-0001-5928-6339</span>
+      <span class="meta-pill">Course Work GPA: 8.80 (PhD)</span>
+      <span class="meta-pill">UGC-JRF (Political Science)</span>
+    </div>
+
     <div class="glow-line"></div>
+
     <p class="bio">
-     As a Junior Research Fellow in the Department of International Relations and Politics at the Central University of Kerala, I am passionate about exploring the intricate landscape of global politics. My academic journey culminated in an MPhil degree from the University of Rajasthan, where my dissertation, "Status Signaling through Conspicuous Do-Goodism: Exploring India's Status in the World Order," delved into the complex dynamics of international influence.
-
-My research interests span a broad spectrum, encompassing the multifaceted concept of status in world politics, India's evolving role in the Indo-Pacific, and its strategic use of status signalling. My involvement in the Indian Council of Social Science Research (ICSSR) project on India's Indo-Pacific approach has provided valuable insights into regional dynamics and honed my research skills.
-
-Driven by a keen interest in great power politics, I strive to contribute novel perspectives and nuanced analyses that advance our understanding of international relations. My commitment to academic excellence propels me forward, positioning me as a burgeoning scholar poised to contribute to the field significantly.
+      I am a Senior Research Fellow and PhD Candidate at the Central University of Kerala, working on the role of status in rising powers’ international relations with India as a case study.
+      My research engages International Relations theory, status-seeking strategies, and regional order-building in the Indo-Pacific, including the SAGAR and MAHASAGAR initiatives.
+      I also use quantitative and mixed methods for policy-relevant research, with tools such as R and Stata.
     </p>
+
+    <div class="quick-links">
+      <a href="Ravi_CV.pdf" download rel="noopener">Download CV</a>
+      <a href="https://orcid.org/0000-0001-5928-6339" target="_blank" rel="noopener">ORCID Profile</a>
+      <a href="mailto:ravikalonia@gmail.com" rel="noopener">Email (Personal)</a>
+      <a href="mailto:ravi.2301307012@cukerala.ac.in" rel="noopener">Email (University)</a>
+    </div>
+  </section>
+
+  <section id="education">
+    <h1>Education</h1>
+    <p class="subtitle">Academic background</p>
+
+    <div class="item-list">
+      <div class="item">
+        <span class="item-num">1</span>
+        <div>
+          <h3>PhD in International Relations & Politics (2023–Ongoing)</h3>
+          <p class="meta">Central University of Kerala · Course Work GPA: 8.80</p>
+          <p>Topic: “Status, Regions and Rising Powers in the Emerging World Order: A Case Study of India”.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">2</span>
+        <div>
+          <h3>MPhil in Political Science (2022–2023)</h3>
+          <p class="meta">University of Rajasthan</p>
+          <p>Topic: “Status seeking through conspicuous do-goodism: Exploring India’s status in the world order”.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">3</span>
+        <div>
+          <h3>MA in Political Science (2019–2021)</h3>
+          <p class="meta">Maharshi Dayanand University · CGPA: 7.86 · University Gold Medallist</p>
+          <p>Focus: Political theory, IR, and research methods.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">4</span>
+        <div>
+          <h3>MSc in Mathematics (2017–2019)</h3>
+          <p class="meta">Maharshi Dayanand University · CGPA: 6.90</p>
+          <p>Training that supports quantitative reasoning and analytics in social science research.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h1>Research Experience</h1>
+    <p class="subtitle">Roles and projects</p>
+
+    <div class="item-list">
+      <div class="item">
+        <span class="item-num">1</span>
+        <div>
+          <h3>Senior Research Fellow & PhD Candidate (Oct 2023–Ongoing)</h3>
+          <p class="meta">Central University of Kerala</p>
+          <p>Research on status in rising powers’ international relations with India as a case study.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">2</span>
+        <div>
+          <h3>Research Assistant (Dec 2023–Jun 2024)</h3>
+          <p class="meta">Data collection at PMML, New Delhi · For Dr Vineet Thakur (Leiden University)</p>
+          <p>Archival/data collection support for the Bandung Conference study.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">3</span>
+        <div>
+          <h3>Research Assistant, ICSSR Minor Research Project (Feb 2023–Oct 2023)</h3>
+          <p class="meta">New Delhi</p>
+          <p>Project: “India’s SAGAR initiative in the Indo-Pacific region and its possible outcomes and challenges”.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">4</span>
+        <div>
+          <h3>Junior Research Fellow (Feb 2022–Feb 2023)</h3>
+          <p class="meta">University of Rajasthan</p>
+          <p>Project: Status seeking through conspicuous do-goodism and India’s position in world order.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">5</span>
+        <div>
+          <h3>Research Intern (Nov 2022–Feb 2023)</h3>
+          <p class="meta">Centre for Land Warfare Studies (CLAWS)</p>
+          <p>Supported seminar management (Civil–Military Integration) and published two book reviews.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">6</span>
+        <div>
+          <h3>Translator (May 2023–Ongoing)</h3>
+          <p class="meta">Stimson Center · South Asian Voices (online magazine)</p>
+          <p>Part-time translation support.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="research">
     <h1>Research Interests</h1>
     <p class="subtitle">Areas I focus on</p>
+
     <div class="card-grid">
       <div class="card">
-        <h3>Fluorescent Materials</h3>
-        <p>Synthesis and tuning of fluorescent probes for sensing applications.</p>
+        <h3>IR Theory & Status</h3>
+        <p>Status–region integration, rising powers, status-seeking strategies, Social Identity Theory (SIT), and changing global order.</p>
       </div>
       <div class="card">
-        <h3>Optical Characterization</h3>
-        <p>Spectroscopy, lifetime measurements, and understanding structure–property relationships in emissive systems.</p>
+        <h3>Indo-Pacific & Regional Security</h3>
+        <p>Indo-Pacific security architecture, India’s SAGAR and MAHASAGAR initiatives, and regional narratives of cooperation.</p>
       </div>
       <div class="card">
-        <h3>Artificial Intelligence and Machine Learning</h3>
-        <p>Using AI/ML to fill in the gaps left ahead by Density Functional Theory for .</p>
+        <h3>Global Governance</h3>
+        <p>Multiplex world order, nuclear non-proliferation, and India’s role in the NSG and global governance regimes.</p>
+      </div>
+      <div class="card">
+        <h3>Quantitative Methods</h3>
+        <p>Statistical analysis and visualization for social science research (R, Stata; data visualization workflows).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h1>Publications</h1>
+    <p class="subtitle">Selected book chapter, project report, and book reviews</p>
+
+    <div class="item-list">
+      <div class="item">
+        <span class="item-num">1</span>
+        <div>
+          <h3>Book Chapter: India’s Afghanistan Challenge: Mapping Viability of Maritime Routes</h3>
+          <p class="meta">In: Springer Nature (Emerging Dynamics of India-Afghanistan Relations)</p>
+          <p><a href="https://link.springer.com/chapter/10.1007/978-981-97-4707-8-12" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Publisher link</a></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">2</span>
+        <div>
+          <h3>ICSSR Minor Research Project Report: India’s Indo-Pacific Approach (SAGAR and Challenges)</h3>
+          <p class="meta">By Dr Ladhu Ram Choudhary & Ravi Kumar · Submitted to ICSSR</p>
+          <p>Project report documenting India’s Indo-Pacific approach and SAGAR-related challenges.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">3</span>
+        <div>
+          <h3>Book Review: The Sino-Indian Rivalry: Implications for Global Order</h3>
+          <p class="meta">International Journal · May 2024 · Published</p>
+          <p><a href="https://doi.org/10.1177/00207020241257637" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">DOI</a></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">4</span>
+        <div>
+          <h3>Book Review: The unfinished quest: India’s search for major power status from Nehru to Modi</h3>
+          <p class="meta">International Relations of the Asia-Pacific · Sept 2024 · Published</p>
+          <p><a href="https://doi.org/10.1093/irap/lcae014" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">DOI</a></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">5</span>
+        <div>
+          <h3>Book Review: Crosswinds: Nehru, Zhou and the Anglo-American Competition over China</h3>
+          <p class="meta">China Information · Feb 2025 · Published</p>
+          <p><a href="https://doi.org/10.1177/0920203X251318173a" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">DOI</a></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">6</span>
+        <div>
+          <h3>Book Review: Vishwa Shastra: India and the world</h3>
+          <p class="meta">The Round Table · Apr 2025 · Published</p>
+          <p><a href="https://doi.org/10.1080/00358533.2025.2478119" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">DOI</a></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">7</span>
+        <div>
+          <h3>Book Review: Negotiating India’s Landmark Agreements</h3>
+          <p class="meta">Strategic Analysis · May 2025 · Published</p>
+          <p><a href="https://doi.org/10.1080/09700161.2025.2494944" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">DOI</a></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">8</span>
+        <div>
+          <h3>Book Review: The New World: 21st Century Global Order and India</h3>
+          <p class="meta">India’s World Magazine · Nov 2025 · Published</p>
+          <p><a href="https://indiasworld.in/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Website</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="working">
+    <h1>Working Papers</h1>
+    <p class="subtitle">Under review / in preparation</p>
+
+    <div class="item-list">
+      <div class="item">
+        <span class="item-num">1</span>
+        <div>
+          <h3>India’s Status in the Indo-Pacific region: Identity management, QUAD, and the SAGAR</h3>
+          <p class="meta">Submitted to The Round Table · Sept 2025 · Under Review</p>
+          <p>Applies SIT to India’s status-seeking via social mobility (QUAD), competition (SAGAR), and creativity (aid diplomacy).</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">2</span>
+        <div>
+          <h3>India and the Global Nuclear Order: Seeking Status Through Identity Management Strategy</h3>
+          <p class="meta">Submitted to The International Spectator · Dec 2025 · Under Review</p>
+          <p>Analyzes India’s NSG membership quest through phases of competition, creativity, and mobility; discusses “status denial” and institutional impermeability.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">3</span>
+        <div>
+          <h3>Is India Making a Maritime Security Multiplex?</h3>
+          <p class="meta">With Dr Ladhu Ram Choudhary · Part of ICSSR project</p>
+          <p>Tracks evolution from SAGAR to MAHASAGAR using the concept of multiplexity; includes declassified records and an expert survey (n=73).</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">4</span>
+        <div>
+          <h3>Multiplex, Multipolarity and India’s Status Seeking in World Order</h3>
+          <p class="meta">Manuscript in preparation</p>
+          <p>Examines India’s strategic navigation between multipolarity and multiplex order and implications for legitimacy and global governance architecture.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">5</span>
+        <div>
+          <h3>Great Power Status and Re-engineering of the region: India’s status seeking in the Indo-Pacific through SAGAR and MAHASAGAR</h3>
+          <p class="meta">Manuscript in preparation</p>
+          <p>Explores regions as both status enablers and constrainers, and how regional “re-engineering” shapes rising power status claims.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="conferences">
     <h1>Conferences & Workshops</h1>
-    <p class="subtitle">Talks and participation</p>
+    <p class="subtitle">Selected presentations and methodology training</p>
+
     <div class="item-list">
       <div class="item">
         <span class="item-num">1</span>
         <div>
-          <h3>18th DAE-BRNS Biennial Trombay Symposium on Radiation and Photochemistry (TSRP-2026)</h3>
-          <p class="meta">Bhabha Atomic Research Centre, Mumbai · January 6th to 10th, 2026</p>
-          <p>Poster presentation titled "Data Driven Prediction of Optical Properties of Organic Chromophores: A Comparative Study of Different ML Models".</p>
+          <h3>Extremism in Afghanistan and its impact on India and Asian region</h3>
+          <p class="meta">Central University of Haryana · May 2022</p>
+          <p>Presented paper: “Digging its own grave: The strategic miscalculation of Rawalpindi GHQ by nurturing Taliban.”</p>
         </div>
       </div>
+
       <div class="item">
         <span class="item-num">2</span>
         <div>
-          <h3>Indian Council of Chemists 44th Annual National Conference</h3>
-          <p class="meta">KLE Technological University, Hubbali · December 22nd to 24th, 2025</p>
-          <p>Participant</p>
+          <h3>National Security: Military Challenges, Management and Responses</h3>
+          <p class="meta">Himachal Pradesh University, Shimla · Sept 2022</p>
+          <p>Presented paper: “Walking a Tightrope: How New Delhi can manage its Pakistan dilemma while proactively engaging with Kabul’s new rulers.”</p>
         </div>
       </div>
+
       <div class="item">
         <span class="item-num">3</span>
         <div>
-          <h3>National Symposium on Radiation and Photochemistry (NSRP-2025)</h3>
-          <p class="meta">National Institute of Science Education and Research (NISER), Bhubaneshwar · January 23rd to 25th, 2025</p>
-          <p>Poster presentation titled "Theoretical Exploration of Two-Dimesnional Materials for Optical and Electrical Properties".</p>
+          <h3>International Conference on role of advanced statistical tools for Research</h3>
+          <p class="meta">Department of Statistics, University of Rajasthan, Jaipur · Sept 2022</p>
+          <p>Participation focused on advanced statistical tools for research.</p>
         </div>
       </div>
-    <div class="item">
+
+      <div class="item">
         <span class="item-num">4</span>
         <div>
-          <h3>Theory and Applications of In-Silico Approach for Materials Modelling</h3>
-          <p class="meta">Central University of Punjab, Bathinda · February 5th to 11th, 2024</p>
-          <p>Participant.</p>
+          <h3>India’s National Security Policies, Strategies and Challenges</h3>
+          <p class="meta">University of Rajasthan, Jaipur · Jan 2023</p>
+          <p>Presented paper: “Status competition or conflict of interest: Understanding China–India asymmetrical rivalry in the Indian Ocean region.”</p>
         </div>
       </div>
-	</div>
-	
-  </section>
 
-  <section id="publications">
-    <h1>Publications</h1>
-    <p class="subtitle">Journal articles and preprints</p>
-    <div class="item-list">
       <div class="item">
-        <span class="item-num">1</span>
+        <span class="item-num">5</span>
         <div>
-          <h3>Unravelling Cyanide Sensing Mechanisms of Colorimetric and Fluorometric Sensors</h3>
-          <p class="meta"> Dhananjay; Rayudu Surya Sekhar Babu; Gummadi Leela Prabha Anisha, Dr Ravi Kumar Kanaparthi* | NSRP-2025, Vol 37 / 1&2 Page 63-69 Conference review (2025)</p>
-          <p><a href="https://www.israps.org.in/uploads/bulletins/ISRAPS_Bulletin_2025_January_1765599706.pdf" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Link</a></p>
+          <h3>One Week Conference on Research Methods in Social Sciences</h3>
+          <p class="meta">Social Science Research Center, University of Rajasthan, Jaipur · Jan 2023</p>
+          <p>Training in academic writing, SPSS/STATA/R, plagiarism, research ethics, and referencing.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">6</span>
+        <div>
+          <h3>ICSSR Sponsored Research Methodology Course</h3>
+          <p class="meta">Sardar Patel University, Gujarat · March 2024</p>
+          <p>Methodology training course (ICSSR sponsored).</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">7</span>
+        <div>
+          <h3>Stimson Center Strategic Learning Initiative: Strategic South Asia (online)</h3>
+          <p class="meta">Stimson Center · April 2024</p>
+          <p>Completed course: Strategic South Asia.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">8</span>
+        <div>
+          <h3>ICSSR Sponsored 10 days Research Methodology Course</h3>
+          <p class="meta">Central University of Kerala · Nov 2024</p>
+          <p>Training in research methods, writing, SPSS/STATA/R/NVivo; research ethics and referencing.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">9</span>
+        <div>
+          <h3>India Ideas @ 2047: Emerging Contours of Foreign Policy and Security Strategy</h3>
+          <p class="meta">Gujarat University, Ahmedabad · Feb 17–18, 2025</p>
+          <p>Presented paper on India’s status in the Indo-Pacific: identity management, QUAD, and SAGAR.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">10</span>
+        <div>
+          <h3>All Kerala Political Science Conference & International Seminar on World Peace and Order</h3>
+          <p class="meta">University of Kerala, Thiruvananthapuram · Feb 25–27, 2026</p>
+          <p>Abstract submitted and accepted.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">11</span>
+        <div>
+          <h3>International Seminar: Philosophical Foundation and Operational Pragmatism of Bharat</h3>
+          <p class="meta">Central University of Kerala, Thiruvananthapuram · Feb 17–20, 2026</p>
+          <p>Abstract submitted and accepted.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="blog">
-    <h1>Blog</h1>
-    <p class="subtitle">Notes and updates</p>
-    <div class="blog-preview card-grid">
+  <section id="talks">
+    <h1>Invited Talks</h1>
+    <p class="subtitle">Guest lectures and presentations</p>
+
+    <div class="item-list">
+      <div class="item">
+        <span class="item-num">1</span>
+        <div>
+          <h3>Emerging Trends in India–U.S. Relations</h3>
+          <p class="meta">Payyanur College, Kerala · 13 Aug 2025</p>
+          <p>Invited talk on evolving India–U.S. relations.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">2</span>
+        <div>
+          <h3>A New Thrust in India–China Relations: Militarised Frontier</h3>
+          <p class="meta">E. K. Nayanar Memorial Govt. College, Kasargod · 24 Sept 2025</p>
+          <p>Invited talk on India–China dynamics and border militarisation.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">3</span>
+        <div>
+          <h3>Recent Trends in Public Policy and Public Administration</h3>
+          <p class="meta">Capital Centre, Central University of Kerala · 15 Oct 2025</p>
+          <p>Theme paper presentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h1>Research Skills</h1>
+    <p class="subtitle">Software and methods</p>
+
+    <div class="card-grid">
       <div class="card">
-        <a href="#">
-          <h3>Why fluorescent materials matter</h3>
-          <p class="meta">Date</p>
-          <p>Coming soon</p>
-        </a>
+        <h3>Quantitative Analysis</h3>
+        <p>RStudio, Stata, Tableau — statistical modelling, data cleaning, and hypothesis testing.</p>
       </div>
       <div class="card">
-        <a href="#">
-          <h3>Blog 2</h3>
-          <p class="meta">Date</p>
-          <p>To be updated.</p>
-        </a>
+        <h3>Qualitative Analysis</h3>
+        <p>NVivo — thematic coding of interviews, policy documents, and speech transcripts.</p>
+      </div>
+      <div class="card">
+        <h3>Geospatial & Visualization</h3>
+        <p>QGIS, Datawrapper — mapping maritime security multiplexity and creating visualizations.</p>
+      </div>
+      <div class="card">
+        <h3>Academic Production</h3>
+        <p>LaTeX, Office 365 — professional typesetting and manuscript preparation.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:1.25rem; color:var(--text-muted);">
+      <p style="font-family:'Outfit',sans-serif; font-size:0.95rem;">
+        Additional training includes SWAYAM courses in LaTeX & XFig, R programming, research methods, IR, research methodology (IIT Roorkee), German-I (in progress), and English for Thesis Writing (in progress).
+      </p>
+    </div>
+  </section>
+
+  <section id="memberships">
+    <h1>Memberships</h1>
+    <p class="subtitle">Academic and professional affiliations</p>
+
+    <div class="item-list">
+      <div class="item">
+        <span class="item-num">1</span>
+        <div>
+          <h3>International Association for Political Science Students (IAPSS)</h3>
+          <p class="meta">Member</p>
+          <p>Also served as Sponsorship Coordinator (Feb 2023–Oct 2023).</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">2</span>
+        <div>
+          <h3>New Zealand Institute of International Affairs (NZIIA)</h3>
+          <p class="meta">Member</p>
+          <p>Engagement with international affairs research community.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">3</span>
+        <div>
+          <h3>Prime Ministers Memorial Museum & Library (PMML), New Delhi</h3>
+          <p class="meta">Member</p>
+          <p>Research and archival access.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-num">4</span>
+        <div>
+          <h3>National Archive of India, New Delhi</h3>
+          <p class="meta">Member</p>
+          <p>Archival research access.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -693,122 +999,9 @@ Driven by a keen interest in great power politics, I strive to contribute novel 
   <section id="contact">
     <h1>Get in Touch</h1>
     <p class="subtitle">Collaborations, questions, or a simple hello</p>
-    <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Reach me via email or academic profiles.</p>
+    <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Reach me via email or academic profile.</p>
+
     <div class="contact-links">
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dhananjay.2301107005@cukerala.ac.in" target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
-        Email
-      </a>
-      <a href="https://orcid.org/my-orcid?orcid=0009-0006-6532-3726" target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg>
-        ORCID
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <p>Central University of Kerala · Fluorescent Materials Research</p>
-  </footer>
-
-  <script>
-    (function () {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('nav a');
-      const nav = document.getElementById('nav');
-      const themeToggle = document.getElementById('theme-toggle');
-      const THEME_KEY = 'phd-site-theme';
-
-      function getStoredTheme() {
-        try {
-          return localStorage.getItem(THEME_KEY);
-        } catch (e) {
-          return null;
-        }
-      }
-
-      function setTheme(theme) {
-        const next = theme === 'light' ? 'light' : 'dark';
-        if (next === 'light') {
-          document.documentElement.setAttribute('data-theme', 'light');
-        } else {
-          document.documentElement.removeAttribute('data-theme');
-        }
-        try {
-          localStorage.setItem(THEME_KEY, next);
-        } catch (e) {}
-      }
-
-      function initTheme() {
-        const stored = getStoredTheme();
-        if (stored === 'light') {
-          document.documentElement.setAttribute('data-theme', 'light');
-        } else {
-          document.documentElement.removeAttribute('data-theme');
-        }
-      }
-
-      if (themeToggle) {
-        themeToggle.addEventListener('click', function () {
-          const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-          setTheme(isLight ? 'dark' : 'light');
-        });
-      }
-
-      initTheme();
-
-      function setActiveLink() {
-        const scrollY = window.scrollY;
-        let current = '';
-        sections.forEach(function (section) {
-          const top = section.offsetTop - 120;
-          const height = section.offsetHeight;
-          if (scrollY >= top && scrollY < top + height) current = section.getAttribute('id');
-        });
-        navLinks.forEach(function (a) {
-          a.classList.remove('active');
-          if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-        });
-      }
-
-      function reveal() {
-        sections.forEach(function (section) {
-          const top = section.getBoundingClientRect().top;
-          const win = window.innerHeight;
-          if (top < win * 0.85) section.classList.add('visible');
-        });
-      }
-
-      window.addEventListener('scroll', function () {
-        setActiveLink();
-        reveal();
-      });
-      window.addEventListener('load', function () {
-        setActiveLink();
-        reveal();
-      });
-
-      /* Custom cursor glow – light blue transparent ring; only on devices with hover */
-      (function () {
-        const glow = document.getElementById('cursor-glow');
-        if (!glow || !window.matchMedia('(hover: hover)').matches) return;
-
-        let x = 0, y = 0;
-        let raf = 0;
-
-        function updatePosition(e) {
-          x = e.clientX;
-          y = e.clientY;
-          if (!raf) {
-            raf = requestAnimationFrame(function () {
-              glow.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-              raf = 0;
-            });
-          }
-        }
-
-        document.addEventListener('mousemove', updatePosition, { passive: true });
-      })();
-    })();
-  </script>
-</body>
-</html>
+      <a href="mailto:ravikalonia@gmail.com" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round"
