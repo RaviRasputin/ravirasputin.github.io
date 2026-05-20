@@ -1817,24 +1817,93 @@
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
 
   <script>
-    // === Navbar scroll effect ===
+    // === Page Switching System ===
     const navbar = document.getElementById('navbar');
     const scrollTopBtn = document.getElementById('scrollTop');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const allNavLinks = navLinks.querySelectorAll('a');
+    const allSections = document.querySelectorAll('section:not(.hero)');
 
+    // Show a specific section, hide all others
+    function showPage(sectionId) {
+      // Hide all sections
+      allSections.forEach(s => {
+        s.classList.remove('page-active');
+      });
+
+      // Remove active class from all nav links
+      allNavLinks.forEach(a => a.classList.remove('active-link'));
+
+      // Show the target section
+      if (sectionId) {
+        const target = document.getElementById(sectionId);
+        if (target) {
+          // Small delay to allow CSS display:none -> block transition
+          requestAnimationFrame(() => {
+            target.classList.add('page-active');
+            // Trigger reveal animations inside the active section
+            target.querySelectorAll('.reveal').forEach(el => {
+              el.classList.add('visible');
+            });
+            // Scroll to the section smoothly
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+          });
+
+          // Highlight active nav link
+          const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+          if (activeLink) activeLink.classList.add('active-link');
+        }
+      } else {
+        // No section - just hero (home)
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Nav link click handlers
+    allNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sectionId = link.getAttribute('href').replace('#', '');
+        showPage(sectionId);
+
+        // Close mobile menu
+        navLinks.classList.remove('open');
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    // Logo click → go home (hero only)
+    document.querySelector('.nav-logo').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(null);
+    });
+
+    // Hero CTA buttons
+    document.querySelectorAll('.hero-cta a, .footer-links a').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sectionId = btn.getAttribute('href').replace('#', '');
+        showPage(sectionId);
+      });
+    });
+
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       navbar.classList.toggle('scrolled', scrollY > 60);
       scrollTopBtn.classList.toggle('show', scrollY > 500);
     });
 
+    // Scroll to top button
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // === Mobile menu ===
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
+    // Mobile menu toggle
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       const spans = hamburger.querySelectorAll('span');
@@ -1849,27 +1918,8 @@
       }
     });
 
-    // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-      });
-    });
-
-    // === Intersection Observer for reveals ===
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    // Trigger reveal animations for hero section on load
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
 
     // === Contact form handler ===
     function handleSubmit(e) {
@@ -1885,21 +1935,6 @@
         e.target.reset();
       }, 3000);
     }
-
-    // === Active nav link on scroll ===
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY + 120;
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-        if (link) {
-          link.style.color = (scrollY >= top && scrollY < top + height) ? 'var(--gold-400)' : '';
-        }
-      });
-    });
 
     // === Gallery Filters ===
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1975,6 +2010,12 @@
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
+
+    // === Handle browser hash on load ===
+    if (window.location.hash) {
+      const hashId = window.location.hash.replace('#', '');
+      showPage(hashId);
+    }
   </script>
 </body>
 </html>
