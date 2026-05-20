@@ -88,6 +88,37 @@ section {
   position: relative;
 }
 
+/* ===== PAGE SWITCHING ===== */
+/* All content sections (not hero) are hidden by default */
+section:not(.hero) {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Active page section is visible */
+section.page-active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: pageSlideIn 0.5s ease forwards;
+}
+
+@keyframes pageSlideIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Active nav link indicator */
+.nav-links a.active-link {
+  color: var(--gold-400) !important;
+}
+
+.nav-links a.active-link::after {
+  width: 100% !important;
+}
+
 /* ===== ANIMATIONS ===== */
 .reveal {
   opacity: 0;
