@@ -1681,3 +1681,6 @@ section.page-active {
 .doi-link::after { content:' ↗'; font-size:0.85em; }
 .doi-link:hover { color:var(--gold-200); border-bottom-color:var(--gold-200); }
 .doi-link:focus-visible { outline:2px solid var(--gold-300); outline-offset:2px; }
+
+/* Keep mixed-case abbreviations such as PhD inside uppercase labels */
+.keep-case { text-transform: none; }
