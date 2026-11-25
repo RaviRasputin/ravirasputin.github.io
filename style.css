@@ -1505,8 +1505,6 @@ section.page-active {
 
 .hero-book-note { margin-top:20px; font-size:0.85rem; color:var(--slate-300); }
 .hero-book-note a { color:var(--gold-300); border-bottom:1px solid rgba(232,198,119,0.4); }
-.hero-book-note .new-pill { display:inline-block; font-size:0.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;
-  color:var(--navy-900); background:var(--gold-400); border-radius:4px; padding:2px 8px; margin-right:8px; }
 
 @media (prefers-reduced-motion: reduce) {
   .mybook-feature:hover .mybook-cover, .mybook-feature:hover .mybook-cover-img, .companion-toc a:hover { transform:none; }
@@ -1687,3 +1685,16 @@ section.page-active {
 
 /* Interim: solid navbar (refined in the navigation batch) */
 .navbar { background: rgba(10, 22, 40, 0.92); }
+
+/* ===== Batch 1: copy-pass support classes ===== */
+.text-link { color: var(--gold-300); text-decoration: underline; text-underline-offset: 3px; }
+.text-link:hover { color: var(--gold-200); }
+.group-title { color: var(--gold-300); font-family: var(--font-heading); font-size: 1.15rem; margin: 0 0 16px; font-weight: 700; }
+.section-title-sm { font-size: 1.8rem; }
+.hero-availability { font-size: 0.95rem; color: var(--gold-300); margin: -16px 0 24px; }
+.research-statement { max-width: 760px; color: var(--slate-200); line-height: 1.8; margin-top: 16px; }
+.research-statement p + p { margin-top: 14px; }
+.research-card .card-links { margin: 12px 0 0; font-size: 0.9rem; }
+.research-card .card-links a { color: var(--gold-300); text-decoration: underline; text-underline-offset: 3px; }
+.methods-line { margin-top: 32px; max-width: 820px; color: var(--slate-200); line-height: 1.8; }
+.hero-book-note a { white-space: normal; }
