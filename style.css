@@ -1675,3 +1675,9 @@ section.page-active {
 .companion-intro-text .companion-sub { margin-bottom:16px; }
 @media (max-width: 700px) { .companion-intro { grid-template-columns:1fr; justify-items:center; text-align:left; } }
 @media (prefers-reduced-motion: reduce) { .companion-cover:hover img { transform:none; } }
+
+/* Clickable DOIs in book reviews */
+.doi-link { color:var(--gold-300); border-bottom:1px solid rgba(236,202,128,0.45); transition:color .2s, border-color .2s; word-break:break-all; }
+.doi-link::after { content:' ↗'; font-size:0.85em; }
+.doi-link:hover { color:var(--gold-200); border-bottom-color:var(--gold-200); }
+.doi-link:focus-visible { outline:2px solid var(--gold-300); outline-offset:2px; }
