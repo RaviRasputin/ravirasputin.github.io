@@ -1649,3 +1649,12 @@ section.page-active {
 .rd-body .book-genre-tags { margin-bottom:10px; }
 .rd-body p { font-size:0.9rem; color:var(--slate-300); line-height:1.7; }
 @media (max-width: 900px) { .reading-now-grid { grid-template-columns:1fr; } .read-done-list { grid-template-columns:1fr; } }
+
+/* Reading Done now shares the reading-desk card design */
+.status-badge.done { color:#4ade80; background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); }
+.cover-fallback { width:150px; aspect-ratio:2/3; border-radius:4px; display:flex; flex-direction:column; justify-content:flex-end; gap:8px;
+  padding:16px 14px; text-align:left; background:linear-gradient(160deg, var(--navy-600), var(--navy-800) 65%, var(--navy-900));
+  box-shadow:4px 4px 20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08); position:relative; overflow:hidden; }
+.cover-fallback::before { content:''; position:absolute; top:0; bottom:0; left:8px; width:2px; background:rgba(217,174,90,0.45); }
+.cover-fallback span { font-family:var(--font-heading); font-weight:700; font-size:1.2rem; line-height:1.2; color:var(--white); padding-left:8px; }
+.cover-fallback small { font-size:0.7rem; letter-spacing:1px; text-transform:uppercase; color:var(--gold-300); padding-left:8px; }
