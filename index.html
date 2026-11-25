@@ -20,7 +20,7 @@
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://ravirasputin.github.io/#person", "name": "Ravi Kumar", "givenName": "Ravi", "familyName": "Kumar", "jobTitle": "Senior Research Fellow and PhD Candidate", "image": "https://ravirasputin.github.io/assets/images/profile-final.jpg", "url": "https://ravirasputin.github.io/", "affiliation": {"@type": "CollegeOrUniversity", "name": "Central University of Kerala", "address": {"@type": "PostalAddress", "addressLocality": "Kasaragod", "addressRegion": "Kerala", "postalCode": "671316", "addressCountry": "IN"}}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Maharshi Dayanand University"}, {"@type": "CollegeOrUniversity", "name": "University of Rajasthan"}], "knowsAbout": ["International relations", "Status and recognition in world politics", "Rising powers", "India's foreign policy", "Nuclear politics", "Indo-Pacific security"], "award": "University Gold Medal, MA Political Science, Maharshi Dayanand University (2021)", "sameAs": ["https://orcid.org/0000-0001-5928-6339", "https://scholar.google.com/citations?user=XtmeHCAAAAAJ", "https://github.com/RaviRasputin", "https://x.com/Ravi_IntRel"]}, {"@type": "Book", "@id": "https://ravirasputin.github.io/#book", "name": "UGC NET Paper 1: Teaching and Research Aptitude, Unit-wise Question Bank", "image": "https://ravirasputin.github.io/assets/images/book-cover.jpg", "author": [{"@id": "https://ravirasputin.github.io/#person"}, {"@type": "Person", "name": "Ankit Baral"}, {"@type": "Person", "name": "Arti Kumari"}, {"@type": "Person", "name": "Lokesh"}], "bookEdition": "First Edition", "datePublished": "2026", "inLanguage": "en", "url": "https://www.amazon.in/UGC-NET-Paper-Teaching-Unit-wise/dp/8167454185"}, {"@type": "Book", "name": "Explanations and Connections: Companion to the Unit-wise Question Bank", "author": {"@id": "https://ravirasputin.github.io/#person"}, "bookFormat": "https://schema.org/EBook", "numberOfPages": 298, "version": "1.0", "datePublished": "2026-11", "isAccessibleForFree": true, "encodingFormat": "application/pdf", "inLanguage": "en", "url": "https://ravirasputin.github.io/assets/docs/ugc-net-paper1-companion.pdf", "isBasedOn": {"@id": "https://ravirasputin.github.io/#book"}}, {"@type": "Dataset", "name": "Lok Sabha Debates (India)", "description": "Transcripts of Lok Sabha debates, 1952 to present, in 75 annual archives.", "creator": {"@id": "https://ravirasputin.github.io/#person"}, "identifier": "https://doi.org/10.7910/DVN/OSDL3T", "url": "https://doi.org/10.7910/DVN/OSDL3T", "publisher": {"@type": "Organization", "name": "Harvard Dataverse"}, "datePublished": "2026", "version": "1", "temporalCoverage": "1952/2026", "spatialCoverage": "India"}, {"@type": "Dataset", "name": "Rajya Sabha Debates (India)", "description": "Transcripts of Rajya Sabha debates, 1952 to present, in 74 annual archives.", "creator": {"@id": "https://ravirasputin.github.io/#person"}, "identifier": "https://doi.org/10.7910/DVN/NJNKZW", "url": "https://doi.org/10.7910/DVN/NJNKZW", "publisher": {"@type": "Organization", "name": "Harvard Dataverse"}, "datePublished": "2026", "version": "1", "temporalCoverage": "1952/2026", "spatialCoverage": "India"}]}
   </script>
-  <link rel="stylesheet" href="style.css?v=20261126f">
+  <link rel="stylesheet" href="style.css?v=20261126h">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 </head>
@@ -55,7 +55,6 @@
   </nav>
   <main id="main" tabindex="-1">
   <section class="hero" id="hero">
-    <div class="hero-bg"></div>
     <div class="container">
       <div class="hero-grid">
         <div class="hero-text">
@@ -101,7 +100,7 @@
       </div>
       <div class="about-grid">
         <div class="about-image reveal">
-          <img src="assets/images/campus.png" alt="Central University of Kerala campus">
+          <img src="assets/images/campus.jpg" alt="Entrance lawn of the Central University of Kerala campus" width="755" height="426">
           <div class="about-image-caption">Central University of Kerala, Kasaragod</div>
         </div>
         <div class="about-text reveal">
@@ -1455,63 +1454,21 @@
     </div>
   </section>
 
-  <section id="gallery">
+  <section id="gallery" aria-labelledby="gallery-title">
     <div class="container">
       <div class="reveal">
-        <span class="section-label">Gallery</span>
-        <h2 class="section-title">Photographs</h2>
+        <span class="section-label">Photographs</span>
+        <h2 class="section-title" id="gallery-title">Photographs</h2>
         <p class="section-desc">Talks and teaching.</p>
       </div>
-      <div class="gallery-filters reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="conference">Conferences</button>
-        <button class="filter-btn" data-filter="workshop">Workshops</button>
-        <button class="filter-btn" data-filter="Research Forum">Research Forum</button>
-      </div>
-      <div class="gallery-grid reveal">
-        <div class="gallery-item" data-category="Research Forum" onclick="openLightbox(0)">
-          <img src="assets/images/1.jpg" alt="Paper presentation at IRSA Conference 2024" loading="lazy">
-          <div class="gallery-overlay">
-            <h4>IRSA Conference 2024</h4>
-            <p>Paper Presentation on Global Power Dynamics</p>
-          </div>
-        </div>
-        <div class="gallery-item tall" data-category="Research Forum" onclick="openLightbox(1)">
-          <img src="assets/images/2.jpg" alt="Panel discussion at national seminar" loading="lazy">
-          <div class="gallery-overlay">
-            <h4>National Seminar Panel</h4>
-            <p>Panel discussion on India’s Foreign Policy</p>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="Research Forum" onclick="openLightbox(2)">
-          <img src="assets/images/3.jpg" alt="Research methodology workshop" loading="lazy">
-          <div class="gallery-overlay">
-            <h4>Research Workshop</h4>
-            <p>ICSSR Methodology Workshop, 2024</p>
-          </div>
-        </div>
-        <div class="gallery-item tall" data-category="Research Forum" onclick="openLightbox(3)">
-          <img src="assets/images/4.jpg" alt="Award ceremony" loading="lazy">
-          <div class="gallery-overlay">
-            <h4>Convocation Ceremony</h4>
-            <p>Receiving academic recognition</p>
-          </div>
-        </div>
-        <div class="gallery-item wide" data-category="Research Forum" onclick="openLightbox(4)">
-          <img src="assets/images/5.jpg" alt="Group photo after conference" loading="lazy">
-          <div class="gallery-overlay">
-            <h4>Conference Group Photo</h4>
-            <p>Delegates at the National Conference on Multilateralism</p>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="Research Forum" onclick="openLightbox(5)">
-          <img src="assets/images/6.jpg" alt="Guest lecture session" loading="lazy">
-          <div class="gallery-overlay">
-            <h4>Guest Lecture</h4>
-            <p>Distinguished lecture series at CUK</p>
-          </div>
-        </div>
-      </div>
+      <ul class="gallery-grid reveal">
+        <li class="gallery-item"><button type="button" class="gallery-open" data-full="assets/images/gallery/2-1600.jpg">
+          <img src="assets/images/gallery/2-640.jpg" alt="Ravi Kumar speaking with a handheld microphone" width="480" height="640" loading="lazy"></button></li>
+        <li class="gallery-item"><button type="button" class="gallery-open" data-full="assets/images/gallery/4-1600.jpg">
+          <img src="assets/images/gallery/4-640.jpg" alt="Ravi Kumar presenting from a laptop at a lectern" width="360" height="640" loading="lazy"></button></li>
+        <li class="gallery-item"><button type="button" class="gallery-open" data-full="assets/images/gallery/5-1600.jpg">
+          <img src="assets/images/gallery/5-640.jpg" alt="Students seated in a lecture hall during a talk" width="640" height="360" loading="lazy"></button></li>
+      </ul>
     </div>
   </section>
 
@@ -1561,17 +1518,13 @@
   </main>
 
   <!-- ===== LIGHTBOX ===== -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
-    <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous">‹</button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer">
+    <button type="button" class="lightbox-close" aria-label="Close">✕</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous photograph">‹</button>
     <div class="lightbox-content">
-      <img id="lightboxImg" src="" alt="Gallery image">
-      <div class="lightbox-caption">
-        <h4 id="lightboxTitle"></h4>
-        <p id="lightboxDesc"></p>
-      </div>
+      <img id="lightboxImg" src="" alt="">
     </div>
-    <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)" aria-label="Next">›</button>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next photograph">›</button>
   </div>
   <footer class="footer">
     <div class="container footer-grid">
@@ -1681,81 +1634,54 @@
     document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
     showPage(location.hash.slice(1) || null, { push: false });
 
-    // === Gallery Filters ===
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        galleryItems.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.8)';
-            item.style.display = '';
-            requestAnimationFrame(() => {
-              item.style.opacity = '1';
-              item.style.transform = 'scale(1)';
-            });
-          } else {
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.8)';
-            setTimeout(() => { item.style.display = 'none'; }, 300);
-          }
-        });
-      });
-    });
-
-    // === Lightbox ===
+    // === Photographs and lightbox ===
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxDesc = document.getElementById('lightboxDesc');
+    const thumbs = Array.from(document.querySelectorAll('.gallery-open'));
     let currentIndex = 0;
+    let lastFocus = null;
 
-    const galleryData = Array.from(galleryItems).map(item => ({
-      src: item.querySelector('img').src,
-      title: item.querySelector('h4').textContent,
-      desc: item.querySelector('p').textContent
-    }));
-
+    function updateLightbox() {
+      const t = thumbs[currentIndex];
+      lightboxImg.src = t.dataset.full;
+      lightboxImg.alt = t.querySelector('img').alt;
+    }
     function openLightbox(index) {
+      lastFocus = document.activeElement;
       currentIndex = index;
       updateLightbox();
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      closeBtn.focus();
+      requestAnimationFrame(() => closeBtn.focus());
     }
-
     function closeLightbox() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
     }
-
     function navigateLightbox(dir) {
-      currentIndex = (currentIndex + dir + galleryData.length) % galleryData.length;
+      currentIndex = (currentIndex + dir + thumbs.length) % thumbs.length;
       updateLightbox();
     }
-
-    function updateLightbox() {
-      const data = galleryData[currentIndex];
-      lightboxImg.src = data.src;
-      lightboxTitle.textContent = data.title;
-      lightboxDesc.textContent = data.desc;
-    }
-
-    document.addEventListener('keydown', (e) => {
+    thumbs.forEach((t, i) => t.addEventListener('click', () => openLightbox(i)));
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => navigateLightbox(-1));
+    lightbox.querySelector('.lightbox-next').addEventListener('click', () => navigateLightbox(1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') navigateLightbox(1);
       if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'Tab') {
+        const f = Array.from(lightbox.querySelectorAll('button'));
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
   </script>
 </body>
 </html>
