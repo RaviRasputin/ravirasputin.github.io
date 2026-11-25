@@ -186,7 +186,8 @@ section.page-active {
   color: var(--white);
 }
 
-.nav-logo span { color: var(--gold-400); }
+.nav-logo { white-space: nowrap; letter-spacing: 0.3px; }
+.nav-logo span { background: linear-gradient(120deg, var(--gold-200), var(--gold-400) 60%, #b88a2e); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 .nav-links {
   display: flex;
