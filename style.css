@@ -1459,7 +1459,8 @@ section.page-active {
 .mybook-feature { display:grid; grid-template-columns:280px 1fr; gap:48px; align-items:center; margin-top:48px;
   background: rgba(17,29,53,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:40px; }
 .mybook-cover-wrap { display:flex; justify-content:center; }
-.mybook-cover, .mybook-cover-img { width:240px; height:350px; border-radius:6px;
+.mybook-cover-img { display:block; width:240px; height:auto; }
+.mybook-cover, .mybook-cover-img { width:240px; border-radius:6px;
   box-shadow: 8px 8px 30px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
   transition: transform 0.5s ease, box-shadow 0.5s ease; object-fit:cover; }
 .mybook-cover { position:relative; overflow:hidden; display:flex; flex-direction:column; padding:28px 22px 22px 30px;
@@ -1556,7 +1557,7 @@ section.page-active {
   .mybook-facts { grid-template-columns:1fr; }
   .mybook-actions a { width:100%; justify-content:center; text-align:center; }
   .companion-toc a { grid-template-columns:60px 1fr auto; padding:12px; }
-  .mybook-cover, .mybook-cover-img { width:200px; height:292px; }
+  .mybook-cover-img { width:200px; height:auto; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
   .research-cards { grid-template-columns: 1fr; }
   .conf-grid { grid-template-columns: 1fr; }
