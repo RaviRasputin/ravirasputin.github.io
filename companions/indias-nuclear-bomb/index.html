@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An interactive reader's companion to George Perkovich's India's Nuclear Bomb: timelines, animated explanations of the technology, a chapter-by-chapter guide, who's who and glossary. By Ravi Kumar.">
+<style>.site-back{display:block;max-width:1200px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-left,0px)) 0;font-family:var(--display);font-size:.9rem;font-weight:600;color:var(--neutron);text-decoration:none}.site-back:hover{text-decoration:underline}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>India’s Nuclear Bomb Companion</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a contents rail beside one reading column; figures sit in engineering-drawing panels. */
+:root{
+  --paper:#eceff3; --panel:#f9fafc; --soft:#e1e6ed; --ink:#15223b; --muted:#566379; --rule:#c3ccd9;
+  --fissile:#cf6a0a; --neutron:#0c7a89; --alert:#b3261e; --ok:#2c7a4b;
+  --display:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0d1524; --panel:#152036; --soft:#1d2b46; --ink:#e7edf6; --muted:#9dabc0; --rule:#31415e;
+  --fissile:#f3a341; --neutron:#52c5d2; --alert:#f0766a; --ok:#73c592; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#0d1524; --panel:#152036; --soft:#1d2b46; --ink:#e7edf6; --muted:#9dabc0; --rule:#31415e;
+  --fissile:#f3a341; --neutron:#52c5d2; --alert:#f0766a; --ok:#73c592; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.shell{max-width:1200px;margin:0 auto;padding-block:28px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:210px minmax(0,1fr);gap:44px}
+main{min-width:0}
+h1,h2,h3,h4,.btn,.chip,.tab,nav,.tag,.badge,.cap b{font-family:var(--display)}
+h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.04;margin:0 0 12px;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.12;margin:0 0 8px;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+h3{font-size:1.28rem;line-height:1.2;margin:0 0 8px;font-weight:600;text-wrap:balance}
+h4{font-size:1.02rem;margin:0 0 4px;font-weight:600}
+p{margin:0 0 14px;max-width:68ch}
+a{color:var(--neutron);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--neutron);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.lede{font-size:1.14rem;max-width:62ch}
+.src{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:0 4px;white-space:nowrap;vertical-align:1px}
+.bg{font-family:var(--mono);font-size:.7rem;color:var(--neutron);border:1px dashed var(--neutron);border-radius:3px;padding:0 4px;white-space:nowrap;vertical-align:1px}
+/* rail */
+nav.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:.86rem;max-height:calc(100vh - 40px);overflow:auto}
+nav.rail b{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-weight:500}
+nav.rail a{display:block;color:var(--ink);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--rule)}
+nav.rail a:hover{border-left-color:var(--fissile);color:var(--fissile)}
+@media (max-width:900px){
+  .shell{display:block}
+  nav.rail{position:static;max-height:none;margin-bottom:22px;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+  nav.rail b{margin:0;width:100%}
+  nav.rail b:not(:first-child){margin-top:6px}
+  nav.rail a{border:1px solid var(--rule);border-radius:99px;padding:3px 10px;background:var(--panel)}
+}
+/* hero */
+.hero{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:34px}
+.hero .by{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin:0}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 0}
+.how div{border-top:3px solid var(--ink);padding-top:8px}
+.how div:nth-child(1){border-color:var(--neutron)} .how div:nth-child(2){border-color:var(--fissile)} .how div:nth-child(3){border-color:var(--ok)}
+.how p{font-size:.95rem;margin:0}
+.note{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--muted);padding:12px 16px;font-size:.93rem;margin:20px 0}
+.note p{margin:0 0 6px;max-width:none}.note p:last-child{margin:0}
+section.part{margin:0 0 64px}
+.part-h{border-top:2px solid var(--ink);padding-top:14px;margin-bottom:22px}
+section.topic{margin:0 0 54px;scroll-margin-top:16px}
+section[id],details[id]{scroll-margin-top:16px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 28px}
+.cols p{max-width:none}
+/* figures */
+.fig{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:14px;margin:16px 0 20px;min-width:0}
+.fig-scroll{overflow-x:auto;min-width:0}
+.fig canvas{display:block}
+.fig-t{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 4px}
+.btn{font-size:.86rem;font-weight:600;border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 13px;border-radius:4px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn.pri{background:var(--ink);color:var(--paper)} .btn.pri:hover{background:var(--fissile);border-color:var(--fissile);color:var(--paper)}
+.dots{display:flex;gap:4px;flex-wrap:wrap;margin-left:4px}
+.dot{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--rule);background:transparent;color:var(--muted);font-family:var(--mono);font-size:.72rem;cursor:pointer;padding:0}
+.dot.on{background:var(--fissile);border-color:var(--fissile);color:var(--paper)}
+.cap{font-size:.95rem;margin:10px 0 0;max-width:74ch;min-height:4.6em}
+.cap b{font-weight:600}
+.rng{font-family:var(--display);font-size:.86rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rng input{width:170px;max-width:100%;accent-color:var(--fissile)} .rng.wide{flex:1 1 240px} .rng.wide input{flex:1 1 160px;width:auto;min-width:0}
+.chk{font-family:var(--display);font-size:.86rem;display:flex;gap:6px;align-items:center;flex:1 1 100%}
+.chk input{accent-color:var(--fissile)}
+.bigyr{font-family:var(--display);font-weight:700;font-size:1.6rem;font-variant-numeric:tabular-nums}
+/* range bars */
+.rbar{margin:0 0 10px}.rl{font-size:.9rem;margin-bottom:3px}
+.rt{position:relative;height:18px;background:var(--soft);border-radius:3px}
+.rv{position:absolute;top:0;bottom:0;border-radius:3px;min-width:4px}
+.rn{position:absolute;top:0;font-family:var(--mono);font-size:.72rem;line-height:18px;white-space:nowrap}
+.k-claim,.k-ind{background:var(--fissile)}.k-mid{background:var(--muted)}.k-out{background:var(--neutron)}.k-pak{background:var(--ok)}.k-rule{background:var(--ink)}
+.legend{font-family:var(--display);font-size:.84rem;display:flex;flex-wrap:wrap;gap:6px 6px;align-items:center;margin:0 0 12px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-left:10px}.sw:first-child{margin-left:0}
+.sw.k-claim{background:var(--fissile)}.sw.k-out{background:var(--neutron)}.sw.k-mid{background:var(--muted)}
+/* timeline */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.chip{font-size:.8rem;border:1.5px solid var(--rule);background:transparent;color:var(--muted);padding:3px 10px;border-radius:99px;cursor:pointer}
+.chip::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;background:currentColor;opacity:.35}
+.chip.on{color:var(--ink);border-color:var(--ink)} .chip.on::before{opacity:1}
+.chip.on.c-prog::before,.ev.c-prog{background:var(--fissile)} .chip.on.c-pol::before,.ev.c-pol{background:var(--ink)}
+.chip.on.c-pak::before,.ev.c-pak{background:var(--ok)} .chip.on.c-world::before,.ev.c-world{background:var(--neutron)}
+.tl-scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--paper)}
+.tl{position:relative;padding-bottom:6px}
+.tl-axis{position:relative;height:24px;border-bottom:1px solid var(--rule)}
+.tick{position:absolute;top:0;height:8px;border-left:1px solid var(--rule);font-family:var(--mono);font-size:.68rem;color:var(--muted);padding-left:3px;line-height:26px}
+.tick.maj{height:24px;border-color:var(--muted)}
+.lane{position:relative;height:42px;border-bottom:1px dashed var(--rule)}
+.lane-l{position:sticky;left:0;display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--paper);padding:1px 6px;z-index:2}
+.bar{position:absolute;top:17px;height:20px;border-radius:2px;overflow:hidden;font-family:var(--display);font-size:.72rem;line-height:20px;white-space:nowrap;color:var(--paper)}
+.bar span{padding:0 5px}
+.b-pm{background:var(--ink)}.b-pm.alt{background:var(--muted)}
+.b-aec{background:var(--fissile)}.b-aec.alt{background:color-mix(in srgb,var(--fissile) 70%,var(--ink))}
+.b-drdo{background:var(--alert)}.b-drdo.alt{background:color-mix(in srgb,var(--alert) 70%,var(--ink))}
+.b-pak{background:var(--ok)}.b-pak.alt{background:color-mix(in srgb,var(--ok) 70%,var(--ink))}
+.b-us{background:var(--neutron)}.b-us.alt{background:color-mix(in srgb,var(--neutron) 70%,var(--ink))}
+.lane.evl{height:158px;border-bottom:0}
+.ev{position:absolute;margin-top:16px;width:14px;height:14px;border-radius:50%;border:2px solid var(--paper);padding:0;cursor:pointer;opacity:.4}
+.ev.past{opacity:1}.ev.cur{outline:2px solid var(--ink);outline-offset:2px;z-index:3;transform:scale(1.25)}
+.tl-cur{position:absolute;top:0;bottom:0;width:2px;background:var(--alert);pointer-events:none;z-index:1}
+.tl-now{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;margin-top:14px;align-items:start}
+.now-y{font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:1;font-variant-numeric:tabular-nums}
+.now-w{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;font-size:.88rem}
+.now-w dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.now-w dd{margin:0;font-family:var(--display);font-weight:600}
+.now-e{grid-column:1/-1;border-left:4px solid var(--rule);padding:4px 0 4px 14px;min-height:7.5em}
+.now-e.c-prog{border-color:var(--fissile)}.now-e.c-pol{border-color:var(--ink)}.now-e.c-pak{border-color:var(--ok)}.now-e.c-world{border-color:var(--neutron)}
+.now-e p{margin:0;font-size:.97rem}
+.tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* decisions */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tab{border:1.5px solid var(--rule);background:transparent;color:var(--ink);padding:6px 12px;border-radius:4px;cursor:pointer;text-align:left;font-size:.82rem;line-height:1.25}
+.tab b{display:block;font-size:.98rem}.tab span{color:var(--muted)}
+.tab.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}.tab.on span{color:var(--paper);opacity:.75}
+.dec-h{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.dec-h h4{font-size:1.15rem;margin:0}
+.dec-pm{font-size:.9rem;color:var(--muted);margin:2px 0 10px}
+.badge{font-size:.72rem;font-weight:600;border-radius:99px;padding:2px 10px;border:1.5px solid currentColor;white-space:nowrap}
+.k-go{color:var(--alert)}.k-stop{color:var(--neutron)}.k-hold{color:var(--muted)}.k-build{color:var(--ok)}
+.steps{list-style:none;margin:0 0 12px;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:0 10px;padding:8px 0;border-top:1px solid var(--rule);transition:opacity .5s,transform .5s}
+.steps li::before{content:counter(s);grid-row:1/3;font-family:var(--mono);font-size:.8rem;color:var(--paper);background:var(--ink);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;margin-top:2px}
+.who{font-family:var(--display);font-weight:600;font-size:.95rem}.what{font-size:.95rem}
+.dec-r{background:var(--soft);border-radius:4px;padding:10px 14px;font-size:.95rem;margin-bottom:12px;transition:opacity .5s,transform .5s}
+.wait{opacity:0;transform:translateY(8px)}
+/* ladder */
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:10px}
+.lcol ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column-reverse;gap:5px}
+.lcol li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;border:1.5px solid var(--rule);border-radius:4px;padding:6px 10px;font-size:.88rem;line-height:1.35;opacity:.38;transition:opacity .3s,background .3s,border-color .3s}
+.lcol li.lit{opacity:1;border-color:var(--fissile);background:color-mix(in srgb,var(--fissile) 12%,var(--panel))}
+.lcol li.pak.lit{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--panel))}
+.ly{font-family:var(--mono);font-size:.78rem;padding-top:2px}
+/* lists */
+.road,.reglist{list-style:none;margin:0;padding:0}
+.road li,.reglist li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;padding:7px 0;border-top:1px solid var(--rule);font-size:.95rem;transition:opacity .45s,transform .45s}
+.ry{font-family:var(--mono);font-size:.78rem;color:var(--fissile);padding-top:3px}
+.fg{font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.fac,.ppl{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.ft{border:1.5px solid var(--rule);border-radius:4px;padding:8px 10px;font-size:.84rem;line-height:1.35;display:flex;flex-direction:column;gap:2px}
+.ft b{font-family:var(--display);font-size:.92rem}.ft span{color:var(--muted)}.ft em{font-style:normal;font-family:var(--mono);font-size:.68rem;margin-top:auto;padding-top:4px}
+.ft.s-y{border-color:var(--neutron)}.ft.s-y em{color:var(--neutron)}.ft.s-n{border-color:var(--fissile)}.ft.s-n em{color:var(--fissile)}.ft.s-c{border-style:dashed;border-color:var(--muted)}
+.sw.s-y{background:var(--neutron)}.sw.s-n{background:var(--fissile)}.sw.s-c{background:var(--muted)}
+.pp{border-top:2px solid var(--ink);padding-top:6px;font-size:.88rem;line-height:1.4;display:flex;flex-direction:column}
+.pp b{font-family:var(--display);font-size:.98rem}.pp em{font-style:normal;font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:3px}
+.pmgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pmc{background:var(--panel);border:1px solid var(--rule);border-top:4px solid var(--muted);padding:10px 14px 12px;font-size:.9rem;line-height:1.45}
+.pmc.v-go{border-top-color:var(--alert)}.pmc.v-stop{border-top-color:var(--neutron)}.pmc.v-build{border-top-color:var(--ok)}
+.pmc header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.pmy{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.pmc p{margin:0 0 6px}.pmh{font-family:var(--display);font-weight:600}.pms{font-size:.8rem;color:var(--muted);margin:0}
+.chap{border-top:1px solid var(--rule)}.chap:last-child{border-bottom:1px solid var(--rule)}
+.chap summary{cursor:pointer;display:grid;grid-template-columns:54px minmax(0,1fr);gap:0 10px;padding:10px 0;list-style:none}
+.chap summary::-webkit-details-marker{display:none}
+.cn{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--fissile);grid-row:1/3}
+.ct{font-family:var(--display);font-weight:600;font-size:1.02rem;line-height:1.25}.cy{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.cb{padding:0 0 14px 64px}.cb ul{margin:0 0 10px;padding-left:18px;max-width:68ch}.cb li{margin-bottom:3px}
+.cq{font-style:italic;font-size:1.04rem}.ck{background:var(--soft);padding:8px 12px;border-radius:4px}
+.cl{font-size:.86rem;font-family:var(--display)}.cl a{display:inline-block;margin:2px 4px 2px 0;border:1px solid var(--rule);border-radius:99px;padding:1px 9px;text-decoration:none}
+@media (max-width:560px){.cb{padding-left:0}}
+.glos{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:4px 26px;margin:0}
+.glos div{border-top:1px solid var(--rule);padding:7px 0;font-size:.9rem;line-height:1.4}
+.glos dt{font-family:var(--display);font-weight:600}.glos dd{margin:0;color:var(--muted)}
+.search{font:inherit;font-family:var(--display);font-size:.95rem;padding:7px 12px;border:1.5px solid var(--ink);border-radius:4px;background:var(--panel);color:var(--ink);width:100%;max-width:340px;margin-bottom:12px}
+.thesis{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.thesis div{background:var(--panel);border:1px solid var(--rule);padding:12px 14px;font-size:.93rem;line-height:1.45}
+.thesis b{font-family:var(--display);display:block;margin-bottom:3px}
+footer{border-top:2px solid var(--ink);padding-top:14px;font-size:.86rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<a class="site-back" href="../../#current-reads">&larr; Back to Ravi Kumar&rsquo;s site</a>
+<div class="shell">
+<nav class="rail" aria-label="Contents">
+  <b>Start</b>
+  <a href="#top">How to use this</a><a href="#argument">The argument in brief</a>
+  <b>Timelines</b>
+  <a href="#story">The half-century</a><a href="#pms">Ten prime ministers</a><a href="#decisions">Five decisions</a><a href="#t-ladder">The capability ladder</a>
+  <b>Technology</b>
+  <a href="#t-fission">Fission and critical mass</a><a href="#t-roads">Two roads to a bomb</a><a href="#t-reactor">Inside a reactor</a><a href="#t-reproc">Reprocessing</a><a href="#t-three">The three-stage plan</a><a href="#t-pne">“Peaceful” explosions</a><a href="#t-implosion">The implosion device</a><a href="#t-initiator">The initiator</a><a href="#t-road74">The road to Pokhran</a><a href="#t-test">An underground test</a><a href="#t-yield">The yield disputes</a><a href="#t-boost">Boosting and the H-bomb</a><a href="#t-centrifuge">Pakistan’s centrifuges</a><a href="#t-delivery">Aircraft and missiles</a><a href="#t-safeguards">Safeguards</a><a href="#t-regime">Treaties and laws</a><a href="#t-doctrine">Deterrence words</a><a href="#t-misc">Other technology</a>
+  <b>Reading guide</b>
+  <a href="#chapters">Chapter by chapter</a><a href="#people">Who’s who</a><a href="#glossary">Glossary</a>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <p class="eyebrow">A reader’s companion</p>
+  <h1>India’s Nuclear Bomb, made easy to follow</h1>
+  <p class="lede">George Perkovich’s book runs to 468 pages of text and covers fifty years, fourteen governments and a good deal of physics that it explains only in passing. This page walks through the people, the sequence and the machinery, so that you can read the book itself without stopping to look things up.</p>
+  <p class="by">George Perkovich, <i>India’s Nuclear Bomb: The Impact on Global Proliferation</i> (Berkeley: University of California Press, 1999).</p>
+  <div class="how">
+    <div><h4>1. Watch the timelines</h4><p>Who was prime minister, who ran the atomic establishment, and what happened when. Press Play and let the half-century run.</p></div>
+    <div><h4>2. Learn the machinery</h4><p>Eighteen short lessons, most with an animation you can step through: reactors, plutonium, the device, the tests, the missiles.</p></div>
+    <div><h4>3. Read with the guide open</h4><p>Each chapter in a few lines: the question it answers, what happens, and which lessons to look at first.</p></div>
+  </div>
+  <div class="note">
+    <p><b>How to read the labels.</b> <span class="src">p. 173</span> gives the page of the printed book where Perkovich says this. <span class="bg">background</span> marks standard physics or engineering that the book assumes and does not spell out.</p>
+    <p><b>How the page numbers were checked.</b> The whole main text (pp. 1–468) and the appendix were read through, and every page reference here was compared with the page it cites. The copy used is a scan whose text layer sometimes garbles digits and names, so compare a figure or a spelling with your own copy before quoting it. The animations are schematic. They show principles at the level of a physics textbook and are not to scale.</p>
+  </div>
+</header>
+
+<section class="part" id="argument">
+  <div class="part-h"><p class="eyebrow">Before you start</p><h2>The argument in brief</h2></div>
+  <p>Perkovich asks three questions <span class="src">pp. 5–8, 444</span>. Why did India develop nuclear weapons when and how it did? What keeps India from stopping or reversing course? What effect did the United States have? The usual answer to the first is security: China tested in 1964, so India built a bomb. Perkovich shows that this does not fit the record. India took ten years to test after China did, declined to build weapons for a further fourteen, and tested again in 1998 when its security was no worse than before.</p>
+  <p>His explanation rests on domestic factors: the moral legacy of Gandhi and Nehru, the wish for standing in the world, the cost, a handful of individual leaders, and above all the scientists he calls the <i>strategic enclave</i>, who built the capability first and sought permission afterwards. The conclusion sets out four “illusions” that India’s history explodes.</p>
+  <div class="thesis">
+    <div><b>Illusion 1</b>Security concerns decisively determine proliferation. <span class="src">p. 446</span></div>
+    <div><b>Illusion 2</b>Nonproliferation is the flip side of the proliferation coin: remove the cause and the programme goes away. <span class="src">p. 455</span></div>
+    <div><b>Illusion 3</b>Democracy facilitates nonproliferation. <span class="src">p. 459</span></div>
+    <div><b>Illusion 4</b>Equitable disarmament is unnecessary for nonproliferation. <span class="src">p. 464</span></div>
+  </div>
+  <div class="note">
+    <p><b>Where the book speaks of status.</b> If you are reading for standing, rank and recognition, these are the passages to mark. Bhabha and Nehru saw nuclear technology as a shortcut to modernity and major power status <span class="src">p. 59</span>. The Enterprise episode of 1971 mattered as a problem of esteem <span class="src">p. 166</span>. The desire for major power status, more than any other international consideration, drove the wish to demonstrate the capability in 1974 <span class="src">p. 168</span>. By 1978 nuclear energy had become an issue of national prestige more than of defence <span class="src">p. 216</span>. China held the rising great power status India coveted <span class="src">p. 290</span>. A BJP spokesman in 1993: nuclear weapons will give prestige, power, standing <span class="src">p. 334</span>. In a 1994 elite poll, 38 per cent of bomb supporters wanted it to enhance India’s international status and only 20 per cent cited China <span class="src">p. 354</span>. Equity and rank at the unofficial Goa meeting of 1995 <span class="src">pp. 356–358</span>. Gujral’s story of the sign on the Security Council door <span class="src">p. 400</span>. The seven aims of the 1998 tests, beginning with recognition as a major power <span class="src">p. 439</span>. Standing and autonomy explain the tests better than security does, yet economic strength is what now confers rank <span class="src">pp. 441–442</span>. The two norms that pull against each other, major power status and moral superiority <span class="src">pp. 448–449</span>. The six factors <span class="src">p. 452</span>. The wish to be treated as an equal among the major powers <span class="src">pp. 465–466</span>.</p>
+  </div>
+</section>
+
+<section class="part" id="timelines">
+  <div class="part-h"><p class="eyebrow">Part one</p><h2>Timelines: who, when, and in what order</h2></div>
+
+  <section class="topic" id="story">
+    <h3>The half-century, 1947 to 1998</h3>
+    <p>Five lanes of people and one of events. Press Play to move through time, or drag the year. The panel underneath always tells you who is in office and describes the most recent event. Tap a coloured dot to jump to it.</p>
+    <div class="fig" data-fig="timeline"><p class="fig-t">Master timeline · scroll sideways or press Play</p></div>
+    <p>Three things are worth noticing as it runs. The atomic energy lane changes hands far less often than the prime minister’s lane: seven chairmen against fourteen governments. The two gaps that matter most are January 1966, when Shastri and Bhabha died within a fortnight, and the long stretch from 1974 to 1998 with no test at all. And the treaties and American laws in the bottom row cluster straight after each Indian or Pakistani step.</p>
+  </section>
+
+  <section class="topic" id="pms">
+    <h3>Ten prime ministers and what each did with the bomb</h3>
+    <p>In Indian nuclear policy the prime minister was sovereign <span class="src">p. 175</span>. Cabinets, parliament and the armed forces were told afterwards, if at all. So the story changes character each time the office changes hands.</p>
+    <div class="pmgrid" id="pm-cards"></div>
+  </section>
+
+  <section class="topic" id="decisions">
+    <h3>Five decisions, step by step</h3>
+    <p>The same question came to the prime minister’s desk again and again: shall we test? Pick a moment and watch who asked, who was consulted, who was left out, and what the answer was.</p>
+    <div class="fig" data-fig="decisions"><p class="fig-t">Decision sequences</p></div>
+  </section>
+
+  <section class="topic" id="t-ladder" data-tech="The capability ladder">
+    <h3>The capability ladder</h3>
+    <p>“Having the bomb” is a staircase of separate achievements. A state can stop on any step, and for most of this history India stood deliberately on a middle one. Drag the year to see where each country stood. Pakistan started sixteen years after India’s first reactor and arrived at the top in the same month.</p>
+    <div class="fig" data-fig="ladder"><p class="fig-t">Rungs reached by year</p></div>
+  </section>
+</section>
+
+<section class="part" id="technology">
+  <div class="part-h"><p class="eyebrow">Part two</p><h2>The machinery, one piece at a time</h2></div>
+  <p>The lessons are in the order you need them. Each says what the thing is, how it works, and where it turns up in the book.</p>
+
+  <section class="topic" id="t-fission" data-tech="Fission and critical mass">
+    <h3>1. Fission, chain reactions and critical mass</h3>
+    <p>Some very heavy atoms split when a neutron hits them. Each split releases energy and two or three new neutrons. If each of those goes on to split another atom, the process feeds itself. That is a chain reaction. <span class="bg">background</span></p>
+    <p>Whether the chain grows or dies depends on a race. A neutron either finds another nucleus or escapes through the surface of the metal. In a small or loosely packed lump most escape. In a larger or denser one most hit something. The point where the chain just sustains itself is called critical. Perkovich puts it in a sentence: once the plutonium is dense enough, injected neutrons “collide with and preferentially split plutonium atoms rather than escape” <span class="src">p. 140</span>.</p>
+    <div class="fig" data-fig="chain"><p class="fig-t">Try it · fire a neutron into the metal, then squeeze the metal and fire again</p></div>
+    <p>With the slider at the left, fire several neutrons. A few atoms split and the chain fizzles. Move the slider right to squeeze the same atoms into a smaller space and fire once. This is the whole idea of the implosion bomb: you do not add material, you crush what is there.</p>
+  </section>
+
+  <section class="topic" id="t-roads" data-tech="Two roads to a bomb">
+    <h3>2. Two roads to bomb material</h3>
+    <p>A bomb needs fissile material, and making it is the hard, slow, expensive part of any programme. There are two ways. India chose one and Pakistan the other, and that difference runs through the whole book.</p>
+    <div class="fig" data-fig="roads"><p class="fig-t">From uranium ore to a bomb core</p></div>
+  </section>
+
+  <section class="topic" id="t-reactor" data-tech="Inside a reactor">
+    <h3>3. Inside a reactor: how CIRUS made plutonium</h3>
+    <p>A reactor is a chain reaction held steady. In CIRUS, the 40-megawatt research reactor Canada offered in 1955, the fuel is natural uranium metal and the neutrons are slowed by heavy water <span class="src">p. 27</span>. Canada asked only for a pledge of peaceful use, in a secret annex, with no inspections worth the name. Indian engineers hurried to make the first fuel load themselves so that India could claim the plutonium as its own <span class="src">p. 27</span>.</p>
+    <div class="fig" data-fig="reactor"><p class="fig-t">A heavy-water reactor at work</p></div>
+    <div class="cols">
+      <p><b>Why heavy water mattered.</b> India’s own heavy water plants were late and unreliable. The reactors could not start without it, so in 1982 and 1983 India bought some 60 tonnes of Chinese-origin heavy water in secret through a German broker, Alfred Hempel, with more from Norway and the Soviet Union <span class="src">p. 250</span>.</p>
+      <p><b>Dhruva.</b> A second, larger reactor at Trombay: 100 megawatts, Indian-built, outside safeguards, started in 1985 <span class="src">p. 271</span>. It was meant to add twenty to twenty-five kilograms of plutonium a year, though early faults kept it shut for long periods <span class="src">p. 285</span>.</p>
+      <p><b>Why the grade mattered in 1998.</b> Perkovich reports that one of the 1998 devices, the low-yield one fired on 11 May, used plutonium that was not weapon-grade <span class="src">pp. 404, 428</span>. India’s weapon-grade stock was then perhaps 250 to 300 kilograms, enough for about fifty weapons. If power reactor plutonium can be used as well, the usable stock is far larger: roughly 600 kilograms more at the end of 1998 <span class="src">p. 430</span>. The drawback is that the unwanted isotopes throw off stray neutrons that can start the chain too early <span class="src">p. 429</span>.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="t-reproc" data-tech="Reprocessing">
+    <h3>4. Reprocessing: getting the plutonium out</h3>
+    <p>Plutonium made in a reactor is locked inside used fuel, mixed with uranium and fiercely radioactive waste. Separating it is a chemical job done by remote control behind concrete. Bhabha decided in 1958 to build a plant for it at Trombay, called Phoenix <span class="src">p. 28</span>. A country that can reprocess has crossed the line from having reactors to having bomb material, which is why American law later singled out reprocessing and enrichment for sanctions <span class="src">p. 198</span>.</p>
+    <div class="fig" data-fig="reproc"><p class="fig-t">The Purex process in five steps</p></div>
+  </section>
+
+  <section class="topic" id="t-three" data-tech="The three-stage plan">
+    <h3>5. Bhabha’s three-stage plan</h3>
+    <p>This plan is the reason plutonium could be pursued openly for twenty years. It promised cheap, limitless electricity from Indian thorium, and each stage needed the plutonium or uranium-233 made by the one before. Perkovich lists its flaws: reactors too small to be economic, heavy water that had to be imported, and no serious cost analysis <span class="src">pp. 32–33</span>. In August 1961 Bhabha’s commission forecast 3,000 megawatts of nuclear electricity by 1976. Thirty-seven years on India had little more than half that <span class="src">p. 38</span>.</p>
+    <div class="fig" data-fig="three"><p class="fig-t">Uranium to plutonium to thorium</p></div>
+  </section>
+
+  <section class="topic" id="t-pne" data-tech="“Peaceful” explosions">
+    <h3>6. “Peaceful nuclear explosions”</h3>
+    <p>In the 1950s and 1960s the United States ran a programme called Plowshare to use nuclear explosions for civil engineering: digging harbours and canals, freeing gas from rock. The Soviet Union had its own. This gave the idea of a peaceful explosion real standing, and Bhabha raised Plowshare with American officials in 1965 <span class="src">p. 96</span>.</p>
+    <p>The device for a peaceful explosion is a bomb. Nothing in the physics tells them apart; only the stated purpose differs. That made the phrase politically useful. It let Shastri in 1964 give the scientists something without breaking with Gandhi and Nehru, and it let Indira Gandhi in 1974 test while saying India had “no intention of producing nuclear weapons” <span class="src">p. 178</span>. The NPT refuses the distinction and treats any nuclear explosive device as a weapon. India’s insistence on the distinction, and everyone else’s refusal of it, is one of the book’s running disputes.</p>
+  </section>
+
+  <section class="topic" id="t-implosion" data-tech="The implosion device">
+    <h3>7. The implosion device</h3>
+    <p>This is the heart of the technical story. A plutonium bomb cannot simply slam two pieces together, because plutonium would start reacting too soon and blow itself apart weakly. It has to be squeezed from all sides at once, very fast. Perkovich describes the principle on <span class="src">p. 140</span> and the Indian team’s work on it across chapters 5 to 7.</p>
+    <div class="fig" data-fig="implosion"><p class="fig-t">Cross-section of an implosion device · step through, then tick the box and run it again</p></div>
+    <div class="cols">
+      <p><b>The equation of state.</b> To design the squeeze you must know how plutonium behaves at millions of atmospheres and millions of degrees: how its pressure, density and temperature relate. Nobody publishes that. In late 1967 or early 1968 Ramanna gave the problem to R. Chidambaram, then thirty-two, who worked it out from scarce data on related elements <span class="src">pp. 140–141</span>. Without it one cannot say how much explosive is needed or what the yield will be.</p>
+      <p><b>Purnima.</b> The designers also wanted to measure how fast neutrons behave in plutonium. In 1970 they began a tiny pulsed fast reactor at Trombay, with no budget, from parts begged from other divisions. It first ran in May 1972. Perkovich notes that a simple fission weapon works on the same principle as such a reactor, except that in a bomb the pulse is very big <span class="src">pp. 149–150</span>.</p>
+      <p><b>Who built what.</b> No more than seventy-five people took part. Chidambaram and S. K. Sikka designed the device. Iyengar’s group made the initiator. The Terminal Ballistics Research Laboratory in Chandigarh made the explosive system. Dastidar and Seshadri made the electronics <span class="src">p. 172</span>.</p>
+      <p><b>Why symmetry is everything.</b> If the charges do not fire together, the core is squashed out of shape, compresses less, and wastes its plutonium. Perkovich judges that inexact simultaneity and symmetry were the most likely cause of the 1974 device’s poor yield <span class="src">p. 183</span>. The fix could be tested without plutonium, which is how India improved its design for twenty-four years without a nuclear test <span class="src">pp. 183, 294</span>.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="t-initiator" data-tech="The initiator">
+    <h3>8. The initiator, code-named Flower</h3>
+    <p>The chain reaction needs a first burst of neutrons at exactly the right instant. In the 1974 device this came from a part one and a half centimetres long at the centre of the core. It held polonium and beryllium on either side of a barrier. When the implosion crushed it, a jet of beryllium shot into the polonium, and the mixture gave off neutrons <span class="src">p. 173</span>.</p>
+    <p>Polonium was the trouble. It is made by irradiating bismuth that is 99.999 per cent pure in a reactor. It is so radioactive that it ate through the stainless steel and gold used to hold it <span class="src">p. 173</span>. And it does not keep.</p>
+    <div class="fig" data-fig="half"><p class="fig-t">Polonium-210 decaying · drag the slider</p></div>
+    <p>This is why, once the polonium was ready in 1974, there was pressure to test quickly <span class="src">p. 173</span>. It is also why a polonium initiator suits a one-off experiment and not an arsenal: it would need replacing every few months, in a laboratory <span class="src">p. 272</span>. From the 1980s the designers worked on an initiator using deuterium and tritium, and Perkovich counts its proving in 1998 as a real advance <span class="src">p. 431</span>.</p>
+  </section>
+
+  <section class="topic" id="t-road74" data-tech="The road to Pokhran">
+    <h3>9. The road to Pokhran, 1960 to 1974</h3>
+    <p>Perkovich lists the steps a first device requires <span class="src">p. 171</span>. Put in order with their dates they show how much was done before any prime minister formally said yes.</p>
+    <div class="fig" data-fig="road74"><p class="fig-t">Fourteen years of preparation</p></div>
+    <p>The test itself cost Rs 32 lakh by Sethna’s count. One Indian estimate that included five years of research put the figure at Rs 1,760 million <span class="src">p. 181</span>. The gap is the difference between the price of the last step and the price of the whole staircase.</p>
+  </section>
+
+  <section class="topic" id="t-test" data-tech="An underground test">
+    <h3>10. What happens in an underground test</h3>
+    <p>The 1963 Partial Test Ban Treaty, which India signed, forbids explosions in the air. So India tested underground, in desert near Pokhran. An underground shot hides the fireball but not the shock, and it leaves a cavity, a crater and radioactive debris that can be sampled later.</p>
+    <div class="fig" data-fig="test"><p class="fig-t">Cross-section of the test site</p></div>
+    <div class="cols">
+      <p><b>Seen from space.</b> Digging and cabling a shaft is visible to satellites. In December 1995 American satellites picked up the activity and the story reached the New York Times <span class="src">p. 368</span>. In 1998 the teams worked when satellites were not overhead <span class="src">p. 2</span>. US satellites did record clear signs six hours before the shots, but the analysts were asleep <span class="src">p. 418</span>.</p>
+      <p><b>Three at once.</b> On 11 May 1998 three devices were fired together in shafts about a kilometre apart. One reason, Perkovich reports, was to blur the seismic signal so that outsiders could not separate the yields <span class="src">p. 426</span>.</p>
+      <p><b>The best measurement.</b> The most reliable way to find a yield is radiochemistry: drill into the cavity and analyse the debris. India did this in 1974 and never published the result <span class="src">p. 182</span>.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="t-yield" data-tech="The yield disputes">
+    <h3>11. How big were the explosions?</h3>
+    <p>Yield is measured in kilotons, thousands of tonnes of TNT. The bars show what was claimed and what others estimated. The disagreement matters because the 1998 figures were calculated by comparison with 1974. If the 1974 test was smaller than announced, so were the 1998 ones <span class="src">p. 427</span>.</p>
+    <div class="fig">
+      <p class="fig-t">18 May 1974 · one device</p>
+      <div class="legend"><span class="sw k-claim"></span>Official claim<span class="sw k-mid"></span>Insider, later<span class="sw k-out"></span>Outside or dissenting estimate</div>
+      <div data-fig="yield74"></div>
+      <p class="fig-t" style="margin-top:18px">11 May 1998 · three devices fired together, combined yield</p>
+      <div data-fig="yield98"></div>
+      <p class="cap" style="min-height:0">Scale: 0 to 65 kilotons. The two tests of 13 May 1998 were announced at 0.2 and 0.6 kilotons <span class="src">p. 425</span>.</p>
+    </div>
+    <p>Sethna told Perkovich in 1996 that the 1974 yield “was much lower than had been stated” <span class="src">p. 182</span>. Perkovich’s point is institutional as much as technical: the aura of 1974 shielded the atomic establishment from scrutiny for two decades.</p>
+  </section>
+
+  <section class="topic" id="t-boost" data-tech="Boosting and the H-bomb">
+    <h3>12. Levitation, boosting and the hydrogen bomb</h3>
+    <p>After 1974 the designers’ aim was to get more explosion out of less weight, so that a device could fit under an aircraft or on a missile. The 1974 device weighed about 1,000 kilograms. By 1982 the team had a design of 170 to 200 kilograms <span class="src">p. 242</span>. These are the three steps up, in the order the book meets them.</p>
+    <div class="fig" data-fig="boost"><p class="fig-t">From a plain core to two stages</p></div>
+    <div class="cols">
+      <p><b>Where the ingredients came from.</b> Tritium is made in reactors. India ran a pilot plant extracting it from heavy water <span class="src">p. 2</span>. BARC is reported to have begun separating lithium-6 in the mid-1980s <span class="src">p. 427</span>. In 1984 India imported nearly a hundred kilograms of pure beryllium from West Germany; a beryllium layer round the core reflects neutrons back in <span class="src">p. 271</span>.</p>
+      <p><b>Why testing mattered here.</b> A simple fission device can be trusted from laboratory work. Boosted and two-stage designs are much harder to trust without a full test. That is the technical core of the scientists’ case for testing before the test ban closed the door <span class="src">pp. 361, 365, 375</span>.</p>
+      <p><b>The small shots.</b> The two tests of 13 May were described as giving data for “improved computer simulation” <span class="src">p. 419</span>. The official statement said the data would support computer simulation and, if needed, subcritical experiments <span class="src">p. 417</span>. Subcritical experiments use nuclear material but stop short of a chain reaction. India had objected that the test ban left the established powers free to conduct them <span class="src">pp. 366, 379</span>.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="t-centrifuge" data-tech="Pakistan’s centrifuges">
+    <h3>13. Pakistan’s road: the centrifuge</h3>
+    <p>Pakistan first took the plutonium road and in October 1974 signed for a French reprocessing plant <span class="src">p. 186</span>. In December 1974 A. Q. Khan, a metallurgist working in the Netherlands, urged Bhutto to enrich uranium instead, and a year later he stayed in Pakistan to do it <span class="src">pp. 195–196</span>. Under American pressure France first demanded safeguards and in 1978 cancelled the plant <span class="src">p. 195</span>, which left enrichment as the main route.</p>
+    <div class="fig" data-fig="cent"><p class="fig-t">One centrifuge, then a cascade</p></div>
+    <p>Chapters 8 to 12 follow this effort from the Indian side. India watched it advance, considered bombing Kahuta, and found Washington unwilling to stop a Cold War ally. For Perkovich this weakens the simple security story in an unexpected way: Pakistan’s programme was itself a result of India’s 1971 victory and 1974 test <span class="src">pp. 165, 177</span>.</p>
+  </section>
+
+  <section class="topic" id="t-delivery" data-tech="Aircraft and missiles">
+    <h3>14. Delivery: aircraft and missiles</h3>
+    <p>A device in a shaft is not a weapon. A weapon has to be small and tough enough to be carried, and something has to carry it. The 1974 device was never designed to go on a rocket <span class="src">p. 183</span>, and as late as 1983 India had not worked out how to deliver a nuclear weapon by air <span class="src">p. 249</span>.</p>
+    <div class="fig" data-fig="delivery"><p class="fig-t">Three ways to deliver a warhead</p></div>
+    <div class="fig">
+      <p class="fig-t">Ranges to scale</p>
+      <div data-fig="ranges"></div>
+      <p class="cap" style="min-height:0">Foreign intelligence concluded that Agni’s first flight covered only about 800 kilometres <span class="src">p. 301</span>, and by 1998 it had been tested three times to about 1,000 <span class="src">p. 3</span>. Pakistan’s Ghauri flew perhaps 800 kilometres on 6 April 1998; the 1,500 is Pakistan’s claim <span class="src">p. 409</span>. A later Prithvi version reached 250 kilometres <span class="src">p. 331</span>.</p>
+    </div>
+    <div class="cols">
+      <p><b>From space rocket to missile.</b> India’s first satellite launcher, the SLV-3, was modelled on the American Scout rocket and reached orbit in July 1980. A rocket that can lift a satellite can lift a warhead <span class="src">p. 245</span>. Abdul Kalam, who had worked on it, took charge of the missile effort in 1982 <span class="src">p. 246</span>.</p>
+      <p><b>Five missiles at once.</b> The 1983 programme developed the Nag, Trishul and Akash for the battlefield alongside Prithvi and Agni, so that each could borrow from the others <span class="src">pp. 246–247</span>.</p>
+      <p><b>Supply before demand.</b> Agni had no stated requirement from any armed service. It came, an engineer said, from the wish to do something with the capability available <span class="src">p. 248</span>. Perkovich sees the same pattern as in the bomb itself: the technology arrives first and the strategy is found for it later.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="t-safeguards" data-tech="Safeguards">
+    <h3>15. Safeguards: what was inspected and what was not</h3>
+    <p>Safeguards are the inspection system of the International Atomic Energy Agency. Inspectors count nuclear material going in and out of a plant, fit seals and cameras, and check the books, so that any diversion to weapons would show. They apply only where a state has agreed to them. India accepted them plant by plant, where a foreign supplier insisted, and nowhere else. The Americans and later all major suppliers wanted them everywhere: “full-scope” safeguards. This table, from the book’s appendix <span class="src">pp. 469–471</span>, shows the result by 1998.</p>
+    <div class="fig" data-fig="facilities"><p class="fig-t">India’s nuclear facilities in 1998</p></div>
+    <p>Read it against the plutonium road in lesson 2. Every plant on that road, CIRUS, Dhruva and the Trombay reprocessing plant, is orange.</p>
+  </section>
+
+  <section class="topic" id="t-regime" data-tech="Treaties and laws">
+    <h3>16. The treaties and American laws</h3>
+    <p>The book is also a history of the nonproliferation regime, seen from the receiving end. Each entry below is a rule the book keeps returning to.</p>
+    <ol class="reglist" id="regime-list"></ol>
+  </section>
+
+  <section class="topic" id="t-doctrine" data-tech="Deterrence words">
+    <h3>17. The vocabulary of deterrence</h3>
+    <p>India’s capability changed faster than the words for it. These terms mark the positions the book describes.</p>
+    <div class="thesis">
+      <div><b>The option (1964 to late 1980s)</b>Keep the means to build weapons and the right to do so. Build none. Say that India wants none.</div>
+      <div><b>Recessed deterrence (about 1988 to 1998)</b>Weapons exist as separated parts under civilian scientists’ control, to be assembled if needed. By 1994 the capability was “significant, albeit secret and recessed from military control” <span class="src">p. 349</span>.</div>
+      <div><b>Minimum deterrence</b>A small force for retaliation only. An informal committee in 1985 put its size at warheads in the low hundreds and its cost at Rs 7,000 crore over ten years <span class="src">p. 274</span>.</div>
+      <div><b>No first use</b>A promise never to strike first with nuclear weapons. Part of the 1985 committee’s recommendation <span class="src">p. 274</span>, urged by Rao in Washington in 1994 <span class="src">p. 347</span>, and restated by Vajpayee’s office a week after the 1998 tests <span class="src">p. 420</span>.</div>
+      <div><b>Command and control</b>Who may order use, and how the order reaches a pilot or a missile crew. Through 1998 the armed forces were kept out of nuclear policy <span class="src">p. 404</span>, and the tests were not guided by any new doctrine <span class="src">p. 4</span>.</div>
+    </div>
+  </section>
+
+  <section class="topic" id="t-misc" data-tech="Other technology">
+    <h3>18. Other technology the book mentions</h3>
+    <div class="cols">
+      <p><b>Supercomputers.</b> India asked to buy an American Cray in the mid-1980s for weather forecasting. Washington hesitated because the same machine can model nuclear explosions and break codes. A less powerful model, the XMP-14, was sold; a faster XMP-22 was approved later <span class="src">pp. 269, 290, 302</span>.</p>
+      <p><b>Mixed-oxide fuel.</b> A blend of plutonium and uranium oxides used as reactor fuel. In 1981 Sethna proposed to run Tarapur on it if American fuel stopped. Indira Gandhi doubted that it would work, and France became the supplier instead <span class="src">pp. 234–235</span>. The appendix lists Tarapur 1 as using it <span class="src">p. 469</span>.</p>
+      <p><b>Fast breeder reactors.</b> Reactors with no moderator, in which fast neutrons turn a surrounding blanket into new fuel. India’s test breeder at Kalpakkam started in 1985 <span class="src">p. 285</span>.</p>
+      <p><b>Laser enrichment.</b> A way of separating uranium isotopes with tuned laser light. India had research sites at Trombay and Indore <span class="src">p. 471</span>.</p>
+      <p><b>Ring magnets.</b> Precision magnets for the bearings that let a centrifuge rotor spin almost without friction. Reports in early 1996 that China had supplied 5,000 to Pakistan became a test of American resolve <span class="src">p. 373</span>.</p>
+      <p><b>Explosive lenses.</b> Shaped blocks of fast and slow explosive that bend a blast wave into a sphere. The Indian teams drew on papers published by Los Alamos and Livermore <span class="src">p. 294</span>.</p>
+    </div>
+  </section>
+</section>
+
+<section class="part" id="chapters">
+  <div class="part-h"><p class="eyebrow">Part three</p><h2>Chapter by chapter</h2></div>
+  <p>Open a chapter before you read it. Each gives the question the chapter answers, what happens, the point Perkovich draws, and links to the lessons above.</p>
+  <div id="chapter-list"></div>
+</section>
+
+<section class="part" id="people">
+  <div class="part-h"><p class="eyebrow">Reference</p><h2>Who’s who</h2></div>
+  <div id="people-list"></div>
+</section>
+
+<section class="part" id="glossary">
+  <div class="part-h"><p class="eyebrow">Reference</p><h2>Glossary</h2></div>
+  <label for="gl-search" class="tag" style="display:block;margin-bottom:4px">Find a term</label>
+  <input id="gl-search" class="search" type="search" placeholder="for example: tritium" autocomplete="off">
+  <dl class="glos" id="glossary-list"></dl>
+</section>
+
+<footer>
+  <p>A study aid to George Perkovich, <i>India’s Nuclear Bomb: The Impact on Global Proliferation</i> (University of California Press, 1999). Summaries are paraphrase. Page references are to the printed book. Each was checked against a scanned copy of the full text; compare figures and spellings with your own copy before quoting. Dates of office for prime ministers, chairmen and presidents are from the public record.</p>
+</footer>
+</main>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
