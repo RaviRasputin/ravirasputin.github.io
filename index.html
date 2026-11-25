@@ -20,13 +20,13 @@
    {"@type":"Book","name":"Explanations and Connections: Companion to the Unit-wise Question Bank","author":{"@id":"https://ravirasputin.github.io/#person"},"bookFormat":"https://schema.org/EBook","numberOfPages":298,"version":"1.0","datePublished":"2026-11","isAccessibleForFree":true,"encodingFormat":"application/pdf","inLanguage":"en","url":"https://ravirasputin.github.io/assets/docs/ugc-net-paper1-companion.pdf","isBasedOn":{"@id":"https://ravirasputin.github.io/#book"}}
   ]}
   </script>
-  <link rel="stylesheet" href="style.css?v=20261125f">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="style.css?v=20261126a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
   <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Main">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Ravi Kumar, home">Ravi <span>Kumar</span></a>
       <div class="nav-links" id="navLinks">
@@ -44,7 +44,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -212,8 +212,6 @@
             <span class="interest-tag">Nuclear Politics</span>
           <span class="interest-tag">Open Datasets & Computational Text Analysis</span>
             <span class="interest-tag">Multiplex World Order</span>
-            <!span class="interest-tag"><!Quantitative Methods (R, Stata)><!/span>
-            <!span class="interest-tag"><!Data Visualization><!/span>
           </div>
         </div>
       </div>
@@ -1838,21 +1836,6 @@
 
     // Trigger reveal animations for hero section on load
     document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
-
-    // === Contact form handler ===
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.btn-primary');
-      btn.textContent = '✓ Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #27ae60, #1e8449)';
-      btn.style.color = '#fff';
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        btn.style.color = '';
-        e.target.reset();
-      }, 3000);
-    }
 
     // === Gallery Filters ===
     const filterBtns = document.querySelectorAll('.filter-btn');

@@ -1684,3 +1684,6 @@ section.page-active {
 
 /* Keep mixed-case abbreviations such as PhD inside uppercase labels */
 .keep-case { text-transform: none; }
+
+/* Interim: solid navbar (refined in the navigation batch) */
+.navbar { background: rgba(10, 22, 40, 0.92); }
