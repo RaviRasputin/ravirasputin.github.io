@@ -1625,3 +1625,5 @@ ol.pub-list { list-style: none; padding: 0; margin: 0; }
 }
 
 .lightbox.active { transition: opacity 0.4s ease, visibility 0s; }
+
+.gallery-caption { margin: 8px 2px 0; font-size: .875rem; line-height: 1.4; color: var(--slate-300, #b6c0d1); }
