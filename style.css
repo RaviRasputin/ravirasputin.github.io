@@ -1627,3 +1627,6 @@ ol.pub-list { list-style: none; padding: 0; margin: 0; }
 .lightbox.active { transition: opacity 0.4s ease, visibility 0s; }
 
 .gallery-caption { margin: 8px 2px 0; font-size: .875rem; line-height: 1.4; color: var(--slate-300, #b6c0d1); }
+
+.pub-item .wip-facts { grid-template-columns: 8.5rem 1fr; margin-top: 10px; }
+@media (max-width: 640px) { .pub-item .wip-facts { grid-template-columns: 1fr; } }
