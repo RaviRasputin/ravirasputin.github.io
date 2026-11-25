@@ -1626,3 +1626,26 @@ section.page-active {
 }
 .book-review-card:hover .book-cover-img { transform: perspective(700px) rotateY(-6deg) scale(1.03); box-shadow: 8px 8px 30px rgba(0,0,0,0.55); }
 @media (prefers-reduced-motion: reduce) { .book-review-card:hover .book-cover-img { transform: none; } }
+
+/* Reading now + reading done */
+.reading-now-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px; margin-top:48px; }
+.reading-now-card { display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px;
+  background:rgba(17,29,53,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:28px 24px; transition:var(--transition); }
+.reading-now-card:hover { border-color:rgba(212,168,83,0.25); transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,0.25); }
+.reading-now-cover { width:150px; height:auto; border-radius:4px; box-shadow:4px 4px 20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08); }
+.reading-now-card .book-genre-tags { justify-content:center; }
+.reading-now-card .read-status { justify-content:center; }
+.read-done-list { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px 20px; margin-top:24px; align-items:start; }
+.read-done-item { background:rgba(17,29,53,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:10px; transition:var(--transition); }
+.read-done-item[open], .read-done-item:hover { border-color:rgba(212,168,83,0.25); }
+.read-done-item summary { list-style:none; cursor:pointer; padding:14px 18px; display:flex; flex-direction:column; gap:2px; position:relative; padding-right:42px; }
+.read-done-item summary::-webkit-details-marker { display:none; }
+.read-done-item summary::after { content:'+'; position:absolute; right:18px; top:50%; transform:translateY(-50%); color:var(--gold-400); font-size:1.3rem; }
+.read-done-item[open] summary::after { content:'\2212'; }
+.read-done-item summary:focus-visible { outline:2px solid var(--gold-300); outline-offset:2px; border-radius:10px; }
+.rd-title { color:var(--white); font-weight:700; font-size:1rem; line-height:1.35; }
+.rd-author { color:var(--gold-300); font-style:italic; font-size:0.9rem; }
+.rd-body { padding:0 18px 16px; }
+.rd-body .book-genre-tags { margin-bottom:10px; }
+.rd-body p { font-size:0.9rem; color:var(--slate-300); line-height:1.7; }
+@media (max-width: 900px) { .reading-now-grid { grid-template-columns:1fr; } .read-done-list { grid-template-columns:1fr; } }
