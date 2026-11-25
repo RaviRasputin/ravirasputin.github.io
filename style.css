@@ -1,5 +1,5 @@
 /* ===== IMPORTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+/* Typeface: Times New Roman throughout (system font, no web-font download) */
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -7,15 +7,15 @@
   --navy-800: #111d35;
   --navy-700: #1a2a4a;
   --navy-600: #243b6a;
-  --gold-400: #d4a853;
-  --gold-300: #e8c677;
-  --gold-200: #f0d896;
-  --slate-100: #e8ecf4;
-  --slate-200: #c9d1e0;
-  --slate-300: #a3b1c9;
+  --gold-400: #d9ae5a;
+  --gold-300: #ecca80;
+  --gold-200: #f6e3b0;
+  --slate-100: #f1f3f8;
+  --slate-200: #d6dcea;
+  --slate-300: #b4c0d6;
   --white: #ffffff;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-heading: 'Times New Roman', Times, 'Liberation Serif', serif;
+  --font-body: 'Times New Roman', Times, 'Liberation Serif', serif;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -25,7 +25,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  font-size: 16px;
+  font-size: 18px; /* Times New Roman runs small, so the base size is raised */
 }
 
 body {
@@ -1575,4 +1575,44 @@ section.page-active {
   .current-reads-grid { grid-template-columns: 1fr; }
   .current-read-card { flex-direction: column; align-items: center; text-align: center; }
   .read-status { justify-content: center; }
+}
+
+
+/* ===== FRONT PAGE REFRESH ===== */
+.hero {
+  background:
+    radial-gradient(900px 520px at 85% 15%, rgba(217,174,90,0.16), transparent 60%),
+    radial-gradient(800px 600px at 5% 95%, rgba(52,92,170,0.28), transparent 60%),
+    linear-gradient(180deg, #0c1a36 0%, #0a1628 100%);
+}
+.hero-bg { opacity: 0.14; mix-blend-mode: screen; }
+.hero h1 { font-size: clamp(2.8rem, 5.6vw, 4.2rem); letter-spacing: 0.5px; font-weight: 700; }
+.hero h1 .gold {
+  background: linear-gradient(120deg, var(--gold-200) 0%, var(--gold-400) 55%, #b88a2e 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-subtitle { font-size: 1.4rem; color: var(--gold-300); }
+.hero-desc { color: var(--slate-200); font-size: 1.05rem; max-width: 560px; }
+.hero-badge { background: rgba(217,174,90,0.12); border-color: rgba(217,174,90,0.4); }
+.hero .btn-outline { border-color: rgba(236,202,128,0.45); color: var(--slate-100); background: rgba(255,255,255,0.03); }
+.hero .btn-outline:hover { background: rgba(217,174,90,0.12); border-color: var(--gold-300); }
+.btn-primary, .btn-outline { font-size: 0.95rem; }
+.photo-frame img { border: 3px solid var(--gold-400); box-shadow: 0 0 0 8px rgba(217,174,90,0.1), 0 20px 60px rgba(0,0,0,0.5), 0 0 80px rgba(217,174,90,0.18); }
+.photo-frame::before { border-color: rgba(236,202,128,0.35); }
+.hero-stats { border-top-color: rgba(236,202,128,0.18); }
+.stat h3 { font-size: 2.2rem; color: var(--gold-300); }
+.stat p { color: var(--slate-200); }
+.hero-book-note { color: var(--slate-200); font-size: 0.95rem; }
+.navbar.scrolled { background: rgba(10,22,40,0.92); }
+.nav-links a { font-size: 0.92rem; white-space: nowrap; }
+.nav-links a:focus-visible { outline: none; color: var(--gold-300); text-decoration: underline; text-underline-offset: 6px; }
+.hero-cta { gap: 12px; }
+.hero-cta .btn-primary, .hero-cta .btn-outline { padding: 12px 20px; font-size: 0.92rem; }
+@media (min-width: 1281px) and (max-width: 1500px) { .nav-links { gap: 18px; } .nav-links a { font-size: 0.86rem; } }
+@media (max-width: 1280px) {
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); padding: 24px; gap: 20px;
+    border-bottom: 1px solid rgba(212,168,83,0.1); max-height: calc(100vh - 70px); overflow-y: auto; }
+  .hamburger { display: flex; }
 }
