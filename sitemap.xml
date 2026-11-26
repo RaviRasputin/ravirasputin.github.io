@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ravirasputin.github.io/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://ravirasputin.github.io/companions/indias-nuclear-bomb/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://ravirasputin.github.io/assets/docs/ravi-kumar-cv.pdf</loc><lastmod>2026-11-20</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/about/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/research/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/publications/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/research-in-progress/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/datasets/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/book-reviews/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/talks/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/teaching/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/cv/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/book/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/reading/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/photographs/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://ravirasputin.github.io/contact/</loc><lastmod>2026-11-26</lastmod></url>
 </urlset>
