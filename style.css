@@ -1655,3 +1655,6 @@ html { color-scheme: light; }
 .footer { background: #efe9db; border-top: 1px solid rgba(15,26,48,0.10); }
 .gallery-open, .book-cover-img { background: var(--navy-700); }
 ::selection { background: rgba(138,91,20,0.25); }
+/* Plain dark name and subtitle */
+.hero h1 .gold, .nav-logo span { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: inherit; }
+.hero-subtitle { color: var(--slate-200); }
