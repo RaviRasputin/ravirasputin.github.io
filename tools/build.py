@@ -26,7 +26,6 @@ PAGES = [  # slug, path, nav href, description
  ('book', '/book/', '/book/', 'UGC NET Paper 1: Teaching and Research Aptitude, Unit-wise Question Bank, and its free companion booklet.'),
  ('reading', '/reading/', '/reading/', 'Books currently being read and books finished, with short notes.'),
  ('photographs', '/photographs/', None, 'Photographs from talks and teaching.'),
- ('thesis', '/thesis/', None, 'A reader’s guide to the doctoral thesis Status, Regions, and Rising Powers in the Emerging World Order: A Case Study of India.'),
  ('contact', '/contact/', '/contact/', 'Contact details, academic profiles and CV download.'),
 ]
 def read(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
