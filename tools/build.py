@@ -8,7 +8,7 @@ index.html and one index.html per sub-folder (about/, publications/, ...) plus s
 import json, re, os, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://ravirasputin.github.io'
-CSS_V = '20261127b'
+CSS_V = '20261127c'
 UPDATED = '26 November 2026'
 UPDATED_ISO = '2026-11-26'
 
