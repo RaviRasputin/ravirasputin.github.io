@@ -8,7 +8,7 @@ index.html and one index.html per sub-folder (about/, publications/, ...) plus s
 import json, re, os, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://ravirasputin.github.io'
-CSS_V = '20261127d'
+CSS_V = '20261128a'
 UPDATED = '26 November 2026'
 UPDATED_ISO = '2026-11-26'
 
@@ -26,6 +26,7 @@ PAGES = [  # slug, path, nav href, description
  ('book', '/book/', '/book/', 'UGC NET Paper 1: Teaching and Research Aptitude, Unit-wise Question Bank, and its free companion booklet.'),
  ('reading', '/reading/', '/reading/', 'Books currently being read and books finished, with short notes.'),
  ('photographs', '/photographs/', None, 'Photographs from talks and teaching.'),
+ ('thesis', '/thesis/', None, 'A reader’s guide to the doctoral thesis Status, Regions, and Rising Powers in the Emerging World Order: A Case Study of India.'),
  ('contact', '/contact/', '/contact/', 'Contact details, academic profiles and CV download.'),
 ]
 def read(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
@@ -43,6 +44,7 @@ def ld_for(slug):
     else: return ''
     return '<script type="application/ld+json">\n' + json.dumps({'@context': ld['@context'], '@graph': keep}, ensure_ascii=False) + '\n  </script>'
 
+HIDDEN = {'thesis'}  # built but kept out of the sitemap and marked noindex
 urls = []
 for slug, path, navhref, desc in PAGES:
     body = read('src/pages/%s.html' % slug)
@@ -64,12 +66,12 @@ for slug, path, navhref, desc in PAGES:
         redirect = '<script>(function(){var m=%s,h=location.hash.slice(1);if(h&&m[h])location.replace(m[h]);})();</script>' % json.dumps(m)
     html = (layout.replace('{{TITLE}}', esc(title)).replace('{{DESC}}', esc(desc)).replace('{{CANON}}', SITE + path)
             .replace('{{OGIMG}}', SITE + '/assets/images/og-image.jpg').replace('{{JSONLD}}', ld_for(slug)).replace('{{REDIRECT}}', redirect)
-            .replace('{{CSSV}}', CSS_V).replace('{{BODYCLASS}}', '' if slug == 'home' else ' class="is-subpage"')
+            .replace('{{ROBOTS}}', '<meta name="robots" content="noindex, nofollow">' if slug in HIDDEN else '').replace('{{CSSV}}', CSS_V).replace('{{BODYCLASS}}', '' if slug == 'home' else ' class="is-subpage"')
             .replace('{{NAV}}', nav).replace('{{MAIN}}', body).replace('{{LIGHTBOX}}', lb if has_lb else '').replace('{{FOOTER}}', foot_t))
     out = os.path.join(ROOT, path.strip('/'), 'index.html') if path != '/' else os.path.join(ROOT, 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, 'w', encoding='utf-8').write(html)
-    urls.append(SITE + path)
+    if slug not in HIDDEN: urls.append(SITE + path)
 
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u in urls: sm.append('  <url><loc>%s</loc><lastmod>%s</lastmod></url>' % (u, UPDATED_ISO))
