@@ -1662,5 +1662,5 @@ html { color-scheme: light; }
 /* Photo sits level with the name, not centred against the long left column */
 @media (min-width: 901px) {
   .hero-grid { align-items: start; }
-  .hero-photo { padding-top: 36px; }
+  .hero-photo { padding-top: 150px; }
 }
