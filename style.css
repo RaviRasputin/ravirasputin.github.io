@@ -1658,3 +1658,9 @@ html { color-scheme: light; }
 /* Plain dark name and subtitle */
 .hero h1 .gold, .nav-logo span { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: inherit; }
 .hero-subtitle { color: var(--slate-200); }
+
+/* Photo sits level with the name, not centred against the long left column */
+@media (min-width: 901px) {
+  .hero-grid { align-items: start; }
+  .hero-photo { padding-top: 36px; }
+}
